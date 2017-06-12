@@ -6,9 +6,8 @@ import Typer from '../components/Typer'
 import Languages from '../components/Languages'
 import {msg} from '../libs/services'
 import MediaQuery from 'react-responsive'
-import {color1, color2} from '../libs/colors'
+import {color2} from '../libs/colors'
 
-const color = '#002540'
 
 const styles = StyleSheet.create({
   section :{
@@ -34,6 +33,10 @@ const styles = StyleSheet.create({
     userSelect: 'none',
     textTransform: 'uppercase'
   },
+  languages: {
+    marginTop: '2em',
+    display: 'flex', flexFlow: 'row', justifyContent: 'center'
+  }
 })
 
 class Home extends Component {
@@ -60,7 +63,7 @@ class Home extends Component {
             typeDelay={2000}></Typer>
         </div>
         <MediaQuery query='(max-device-width: 515px)'>
-          <div style={{margin: '2em auto'}}><Languages/></div>
+          <div className={css(styles.languages)}><Languages/></div>
         </MediaQuery>
       </div>
   }

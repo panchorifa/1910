@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {StyleSheet, css} from 'aphrodite'
 import Home from './containers/Home'
 import Inspiration from './containers/Inspiration'
 import About from './containers/About'

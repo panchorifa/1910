@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import {StyleSheet, css} from 'aphrodite'
 import Header from './Header'
 import Footer from './Footer'
-import {color1, color2, color3} from '../libs/colors'
 import {loadApp} from '../libs/services'
 
 const styles = StyleSheet.create({

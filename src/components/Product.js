@@ -65,46 +65,42 @@ const styles = StyleSheet.create({
   description: {
     padding: '.75em 0 0 0',
     textAlign: 'center',
-    fontSize: '1em',
+    fontSize: '1.5em',
     lineHeight: '1.25em',
     color: '#999',
     textDecoration: 'none',
     [upToSmall]: {
-      textAlign: 'left',
-      fontSize: '1.5em'
+      textAlign: 'left'
     }
   },
 
   imageWrapper: {
     textAlign: 'center',
-    width: '16vh',
+    height: '10em',
     marginBottom: '-1.5em',
     padding: '.5em',
     borderRadius: '.25em',
+    display: 'flex', flexFlow: 'row', justifyContent:'center',
     [upToSkinny]: {
       maxWidth: '10em',
       width: '12vh',
     },
     [upToSmall]: {
-      width: '13em',
-      maxWidth: '11em',
+      maxWidth: '8em',
+      height: '9em',
+      marginRight: '2em'
     }
   },
 
   image: {
-    height: '5vh',
     textAlign: 'right',
     padding: '0',
-    opacity: '0.9',
-    // filter: 'alpha(opacity=20)',
     [upToSmall]:{
       width: '7em',
-      height: '7em',
       padding: '1em .5em',
       textAlign: 'left',
     },
     [atLeastSmall]: {
-      height: '9vh',
       width: '10vh',
       padding: '1em'
     }
@@ -126,7 +122,7 @@ class Product extends Component {
 
     return (
       <div className={css(styles.product)}>
-        <a className={css(styles.productLink)} href={this.link} target="_blank">
+        <a className={css(styles.productLink)} rel={this.link} href={this.link} target="_blank">
           <div className={css(styles.imageWrapper)}>
             <img className={css(styles.image)} src={this.img} alt={`${this.name}`}/>
           </div>

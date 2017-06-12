@@ -97,9 +97,9 @@ Typer.defaultProps = {
 	typeDelay: 1000
 };
 
-Typer.PropTypes = {
-	typeSpeed: React.PropTypes.number,
-	typeBackSpeed: React.PropTypes.number,
-	typeDelay: React.PropTypes.number,
-	text: React.PropTypes.arrayOf(React.PropTypes.string)
-}
+// Typer.PropTypes = {
+// 	typeSpeed: React.PropTypes.number,
+// 	typeBackSpeed: React.PropTypes.number,
+// 	typeDelay: React.PropTypes.number,
+// 	text: React.PropTypes.arrayOf(React.PropTypes.string)
+// }

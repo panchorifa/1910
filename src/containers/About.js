@@ -4,7 +4,7 @@ import { StyleSheet, css } from 'aphrodite'
 import Content from '../layout/Content'
 import Label from '../components/Label'
 import Map from '../components/Map'
-import {upToSmall, upToShort, atLeastBig, atLeastSmall} from '../libs/media'
+import {upToSmall, upToShort, atLeastSmall} from '../libs/media'
 import {color2} from '../libs/colors'
 
 
