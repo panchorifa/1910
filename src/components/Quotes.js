@@ -10,19 +10,21 @@ const styles = StyleSheet.create({
     display: 'flex', flexFlow: 'column', justifyContent: 'center',
     width: '100%',
     cursor: 'pointer',
-    padding: 0,
+    padding: '0 1em',
     borderRadius: '2px',
     margin: '1em auto',
+    maxWidth: '680px',
     [upToSmall]: {
-      marginTop: '1em',
+      marginTop: '-1em',
       fontSize: '.6em',
     },
     [upToShort]: {
       fontSize: '.6em',
     },
     [atLeastSmall]: {
-      maxWidth: '70em',
+      // maxWidth: '70em',
       minHeight: '12.75em',
+      paddingTop: '1em',
     }
   },
 

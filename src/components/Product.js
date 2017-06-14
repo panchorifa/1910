@@ -3,20 +3,21 @@ import { connect } from 'react-redux'
 import {StyleSheet, css} from 'aphrodite'
 import {atLeastSmall, upToShort, upToSmall, upToSkinny} from '../libs/media'
 import {msg} from '../libs/services'
-import {color1} from '../libs/colors'
+import {color1, color2, color5} from '../libs/colors'
 
 const styles = StyleSheet.create({
   product: {
     alignItems: 'center',
-    margin: '.5em 0',
-    borderRadius: '2px',
+    margin: '0',
+    borderRadius: '.5em',
     boxShadow: '2px 2px 6px rgba(0,0, 0, 0.2)',
     color: '#fff',
     fontSize: '1.4vh',
     [upToSmall]: {
-      width: '24em',
-      margin: '0 auto 2em auto',
-      textAlign: 'center'
+      width: '18em',
+      margin: '0 5px 10px 5px',
+      textAlign: 'center',
+      paddingTop: '1em'
     },
     [atLeastSmall]: {
       margin: '.5em'
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     textDecoration: 'none',
-    backgroundColor: color1,
+    // backgroundColor: color2,
     padding: '1em',
     borderRadius: '.3em',
     color: '#fff',
@@ -59,40 +60,41 @@ const styles = StyleSheet.create({
   title: {
     fontWeight: 'bold',
     fontSize: '1.7em',
-    padding: '1em 0 0 0',
+    padding: '1.4em 0 0 0',
     textAlign: 'center',
     [upToSmall]: {
-      fontSize: '2.35em',
+      fontSize: '2em',
       lineHeight: '1em',
-      marginTop: '-.5em'
+      marginTop: '-.25em'
     }
   },
 
   description: {
-    padding: '.75em 0 0 0',
+    padding: '.25em 0 0 0',
     textAlign: 'center',
     fontSize: '1.5em',
     lineHeight: '1.25em',
-    color: '#999',
     textDecoration: 'none',
+    [upToSmall]: {
+      padding: '.25em 0 0 0'
+    }
   },
 
   imageWrapper: {
     textAlign: 'center',
-    height: '10em',
+    height: '8em',
     marginBottom: '-1.5em',
     padding: '.5em',
     borderRadius: '.25em',
     display: 'flex', flexFlow: 'row', justifyContent:'center',
+    backgroundColor: '#000',
+    borderRadius: '10em',
     [upToSkinny]: {
       maxWidth: '10em',
       width: '12vh',
     },
     [upToSmall]: {
       maxWidth: '8em',
-      height: '9em',
-      // border: '1px solid red'
-      // marginRight: '2em'
     }
   },
 
@@ -101,7 +103,7 @@ const styles = StyleSheet.create({
     padding: '0',
     [upToSmall]:{
       width: '7em',
-      padding: '1em .5em',
+      padding: '1em',
       textAlign: 'left',
     },
     [atLeastSmall]: {
@@ -123,16 +125,21 @@ class Product extends Component {
 
   render() {
     const description = msg(this.props.lang, `products.${this.id}.description`)
-
+    const ideas = this.props.id === 'anyideas'
+    const style ={
+      backgroundColor: ideas ? '#000' : color2
+    }
     return (
-      <div className={css(styles.product)}>
+      <div style={style} className={css(styles.product)}>
         <a className={css(styles.productLink)} rel={this.link} href={this.link} target="_blank">
           <div className={css(styles.imageWrapper)}>
             <img className={css(styles.image)} src={this.img} alt={`${this.name}`}/>
           </div>
           <div className={css(styles.details)}>
             <div className={css(styles.title)}>{this.name}</div>
-            <div style={{textDecoration: 'none'}} className={css(styles.description)}>{description}</div>
+            <div style={{textDecoration: 'none',
+                    color: ideas ? '#999' : color5}}
+                 className={css(styles.description)}>{description}</div>
           </div>
         </a>
       </div>

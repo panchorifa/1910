@@ -7,8 +7,8 @@ import MenuLink             from './MenuLink'
 
 const styles = StyleSheet.create({
   component: {
-    display: 'flex',
-    flexFlow: 'row',
+    display: 'flex', flexFlow: 'row',
+    height: '2.5em',
     paddingTop: '1em',
     userSelect: 'none'
   }

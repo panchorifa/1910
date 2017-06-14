@@ -1,3 +1,4 @@
+export const color5 = '#00435C'
 export const color4 = '#00171F'
 export const color2 = '#00A8E8'
 // export const color2 = '#02D8FE'//00A8E8'

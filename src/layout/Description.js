@@ -7,16 +7,15 @@ import Label from '../components/Label'
 const styles = StyleSheet.create({
     section: {
       flexGrow: 0,
-      textAlign:'center', color: '#444', margin: '2em auto', maxWidth: '38em',
+      textAlign:'center', color: '#444',
+      margin: '2em auto',
+      maxWidth: '420px',
       [upToShort]: {
         margin: '1em auto'
       },
       [upToSmall]: {
-        // border: '1px solid red',
-        // height: '8em',
-        // margin: '-1em auto',
         fontSize: '.85em'
-      }
+      },
     }
 })
 

@@ -45,7 +45,7 @@ export default class Typer extends React.Component {
 		let dx = 1;
 		let backInterval = null;
 
-		setInterval(function () {
+		const id = setInterval(function () {
 			if (dx === -1) {
 				return;
 			}
@@ -60,10 +60,17 @@ export default class Typer extends React.Component {
 				textArrayIndex = (textArrayIndex + 1) % this.props.text.length;
 			}
 
-			if (textIndex === this.props.text[textArrayIndex].length) {
+      if(textArrayIndex === this.props.text.length - 1) {
+        clearInterval(id)
+      }
+
+			if (textIndex === this.props.text[textArrayIndex].length
+        && textArrayIndex < 4) {
 				dx = -1;
+
 				setTimeout(function () {
 					backInterval = setInterval(function () {
+
 						textIndex += dx;
             if (this.refs.cursorText) {
 						  this.refs.cursorText.innerText = this.props.text[textArrayIndex].substr(0, textIndex);
@@ -79,7 +86,10 @@ export default class Typer extends React.Component {
 				}.bind(this), this.props.typeDelay);
 			}
 		}.bind(this), this.props.typeSpeed);
+
 	}
+
+
 
 	render() {
 		return (

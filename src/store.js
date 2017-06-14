@@ -6,6 +6,7 @@ export const reducer = (state = {
     scrolledBeforeLogo: false,
     scrolledAfterLogo: false,
     section: -1,
+    burger: false,
     lang: 'en',
     langs: [],
     loadingApp: false,
@@ -20,6 +21,8 @@ export const reducer = (state = {
         loadingApp: false,
         langs: action.app.langs }
 
+    case 'SET_BURGER': return { ...state,
+        burger: action.burger }
     case 'SET_SECTION': return { ...state,
         section: action.section }
     case 'SET_SCROLLED_BEFORE_LOGO': return { ...state,

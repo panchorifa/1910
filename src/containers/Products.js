@@ -9,23 +9,37 @@ import Subscriptions        from '../components/SubscriptionSmall'
 
 
 const styles = StyleSheet.create({
+  section: {
+    flexGrow: 1,
+    display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
+  },
   products: {
     flexGrow: 1,
     display: 'flex', flexFlow: 'row wrap', justifyContent: 'center',
+    paddingTop: '1em',
     [upToSmall]: {
-      flexFlow: 'column',
-      justifyContent: 'center'
+      paddingTop: 0,
+      margin: '-1em',
     },
+  },
+  subscription: {
+    flexGrow: 0,
+    display: 'none',
+    margin: '3em 0 0 0',
+    height: '10em',
+    [upToSmall]: {
+      // border: '1px solid red',
+      display: 'block'
+    }
   }
 })
 
 class Products extends Component {
-
   render() {
     const productList = msg(this.props.lang, 'products.products')
-    const show = this.props.section === 0 || window.innerHeight < 737
+    const show = this.props.section === 0 || this.props.show
     return (
-       show &&
+       show &&       
       <Content prefix='products.title.prefix'
                title='products.title.value'
                description='products.description'>

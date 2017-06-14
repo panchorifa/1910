@@ -9,8 +9,9 @@ import {color1, color2, color3} from '../libs/colors'
 
 const styles = StyleSheet.create({
   section: {
+    display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
     [upToSmall]: {
-      marginTop: '6em'
+      marginTop: '8em'
     }
   },
   ideas: {
@@ -19,9 +20,10 @@ const styles = StyleSheet.create({
     margin: '0 auto',
     [upToSmall]: {
       maxWidth: '100%',
+      marginTop: '-1em'
     },
     [atLeastSmall]: {
-      padding: '0 1em',
+      padding: '1em',
     }
   },
   form: {
@@ -57,10 +59,9 @@ const styles = StyleSheet.create({
 class Ideas extends Component {
   render() {
     const message = msg(this.props.lang, 'ideas.message')
-    const show = this.props.section === 2 || window.innerHeight < 737
+    const show = this.props.section === 2 || this.props.show
 
     return show &&
-      <div className={css(styles.section)}>
         <Content prefix='ideas.title.prefix'
                  title='ideas.title.value'
                  description='ideas.description'>
@@ -73,7 +74,6 @@ class Ideas extends Component {
             </div>
           </div>
         </Content>
-      </div>
   }
 }
 

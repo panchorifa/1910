@@ -17,25 +17,31 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   logo: {
-    padding: '.5em',
-    margin: '-6em auto 0 auto',
-    borderRadius: '.25em',
-    width: '23em',
+    margin: '0 auto',
     [upToSmall]: {
       margin: '0 auto',
     }
   },
   software1: {
     textAlign: 'center',
-    margin: '-.5em 0 .5em 0',
+    margin: '.25em 0 .5em 0',
     padding: '.5em 1em',
     fontWeight: 'bold',
     fontSize: '1.4em',
     backgroundColor: color2,
     color: '#fff',
-    letterSpacing: '1px',
+    letterSpacing: '5px',
     userSelect: 'none',
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    [upToSmall]:{
+      letterSpacing: '-1px',
+    }
+  },
+  typer: {
+    fontSize: '2em',
+    [upToSmall]: {
+      fontSize: '1.5em'
+    }
   },
   languages: {
     marginTop: '2em',
@@ -51,7 +57,7 @@ class Home extends Component {
     return active && <div className={css(styles.section)}>
         <div className={css(styles.logo)}>
           <MediaQuery query='(min-device-width: 516px)'>
-            <Logo height={9}/>
+            <Logo height={12}/>
           </MediaQuery>
           <MediaQuery query='(max-device-width: 515px)'>
             <Logo height={8}/>

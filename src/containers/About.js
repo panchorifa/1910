@@ -14,9 +14,10 @@ const styles = StyleSheet.create({
     [upToSmall]:{
       flexFlow: 'column',
       justifyContent: 'stretch',
+      marginTop: '-4em'
     },
     [atLeastSmall]: {
-      maxWidth: '60em',
+      maxWidth: '960px',
       margin: '0 auto'
     }
   },
@@ -29,9 +30,6 @@ const styles = StyleSheet.create({
       fontSize: '.85em',
       marginTop: '1em',
       margin: '1em .5em 0 .5em',
-      ':first-child': {
-        marginTop: '-1em'
-      }
     },
   },
   title: {
@@ -51,6 +49,10 @@ const styles = StyleSheet.create({
         height: '100px',
       },
     },
+    [upToSmall]: {
+      marginTop:'3em',
+      height: '140px',
+    },
   },
 
 })
@@ -64,7 +66,7 @@ class About extends Component {
 
   render() {
     const sections = this.sections
-    const show = this.props.section === 3 || window.innerHeight < 737
+    const show = this.props.section === 3 || this.props.show
 
     return show &&
       <Content prefix='about.title.prefix' title='about.title.value'>

@@ -9,10 +9,12 @@ import {color2} from '../libs/colors'
 
 const styles = StyleSheet.create({
   section: {
-    // flexGrow: 1,
+    flexGrow: 1,
     display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
     backgroundColor: '#fff',
+    // border: '1px solid blue',
     [upToSmall]: {
+      flexGrow: 0,
       padding: '0 1em'
     },
   },
@@ -22,12 +24,12 @@ const styles = StyleSheet.create({
     // paddingBottom: '2em'
   },
   content: {
-    flexGrow: 0,
+    flexGrow: 1,
     padding: 0,
     margin: '0 auto',
     display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
     width: '100%',
-    // border: '1px solid blue'
+    // border: '1px solid red'
   },
   main: {
     flexGrow: 1,
@@ -37,6 +39,9 @@ const styles = StyleSheet.create({
   },
   subscription: {
     flexGrow: 0,
+    [upToSmall]: {
+      display: 'none'
+    }
   },
   title: {
     flexGrow: 0,
@@ -67,8 +72,9 @@ export default class Content extends Component {
           </div>
         </div>
         <div className={css(styles.content)}>
-          <div className={css(styles.main)}>{children}</div>          
+          <div className={css(styles.main)}>{children}</div>
         </div>
+        <div className={css(styles.subscription)}><Subscriptions/></div>
       </div>
     )
   }

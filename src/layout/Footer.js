@@ -9,13 +9,18 @@ import MediaQuery from 'react-responsive'
 const styles = StyleSheet.create({
   section: {
     flexGrow:0,
-    height: '3em',
+    height: '2.5em',
     textAlign: 'center',
+    position: 'relative',
+    width: '100vw',
+    // maxWidth: '960px',
+    margin: '0 auto',
+    // border: '1px solid red'
   },
   languages: {
     position: 'absolute',
     right: '1em',
-    bottom: '.85em'
+    top: '7px'
   },
   copyr: {
     display: 'flex', flexFlow: 'row', justifyContent: 'center',
@@ -24,28 +29,23 @@ const styles = StyleSheet.create({
     color: '#fff'
   },
   logo: {
-    paddingTop: '1em'
+    paddingTop: '6px'
   },
   reg: {
     color: '#555',
     fontSize: '1.4em',
     verticalAlign: 'bottom',
-    margin: '11px 0 0 4px',
+    margin: '4px 0 0 4px',
   },
   year: {
-    padding: '15px 0 0 5px'
+    padding: '6px 0 0 5px'
   }
 })
 
 class Footer extends Component {
   render() {
-    let style = {
-      borderTop: this.props.section >= 0
-          ? '3px solid ' + color4
-          : 'none'
-    }
     return (
-      <div style={style} className={css(styles.section)}>
+      <div className={css(styles.section)}>
         <div className={css(styles.copyr)}>
           <div className={css(styles.logo)}><Logo height={1.2}/></div>
           <div className={css(styles.reg)}>&reg;</div>
