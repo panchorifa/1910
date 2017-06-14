@@ -53,7 +53,9 @@ const styles = StyleSheet.create({
 class Ideas extends Component {
   render() {
     const message = msg(this.props.lang, 'ideas.message')
-    return this.props.section === 2 &&
+    const show = this.props.section === 2 || window.innerHeight < 737
+
+    return show &&
         <Content prefix='ideas.title.prefix'
                  title='ideas.title.value'
                  description='ideas.description'>

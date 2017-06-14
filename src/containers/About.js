@@ -64,7 +64,9 @@ class About extends Component {
 
   render() {
     const sections = this.sections
-    return this.props.section === 3 &&
+    const show = this.props.section === 3 || window.innerHeight < 737
+
+    return show &&
       <Content prefix='about.title.prefix' title='about.title.value'>
          <div className={css(styles.sections)}>
             { sections.map((section, index) => (

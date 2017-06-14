@@ -3,6 +3,8 @@ import thunkMiddleware from 'redux-thunk'
 
 export const reducer = (state = {
     app: null,
+    scrolledBeforeLogo: false,
+    scrolledAfterLogo: false,
     section: -1,
     lang: 'en',
     langs: [],
@@ -20,6 +22,10 @@ export const reducer = (state = {
 
     case 'SET_SECTION': return { ...state,
         section: action.section }
+    case 'SET_SCROLLED_BEFORE_LOGO': return { ...state,
+        scrolledBeforeLogo: action.scrolled }
+    case 'SET_SCROLLED_AFTER_LOGO': return { ...state,
+        scrolledAfterLogo: action.scrolled }
     case 'SET_LANG': return { ...state,
         lang: action.lang }
 

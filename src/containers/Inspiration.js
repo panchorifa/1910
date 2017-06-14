@@ -5,8 +5,8 @@ import Quotes from '../components/Quotes'
 
 class Inspiration extends Component {
   render() {
-    let active = this.props.section === 1
-    return active && <Content
+    const show = this.props.section === 1 || window.innerHeight < 737
+    return show && <Content
               prefix='inspiration.title.prefix'
               title='inspiration.title.value'
               description='inspiration.description'>

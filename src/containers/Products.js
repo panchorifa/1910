@@ -21,19 +21,21 @@ const styles = StyleSheet.create({
 class Products extends Component {
 
   render() {
-    let productList = msg(this.props.lang, 'products.products')
-    return this.props.section === 0 &&
+    const productList = msg(this.props.lang, 'products.products')
+    console.log(window.innerHeight)
+    const show = this.props.section === 0 || window.innerHeight < 737
+    return (
+       show &&
       <Content prefix='products.title.prefix'
                title='products.title.value'
                description='products.description'>
-
           <div className={css(styles.products)}>
             { productList.map((product, index) => (
               <Product {...product} key={'product'+this.props.lang+index}/>
             )) }
           </div>
-
       </Content>
+    )
   }
 }
 

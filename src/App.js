@@ -10,19 +10,26 @@ import {loadApp} from './libs/services'
 
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state = { width: '0', height: '0' };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+
+  updateWindowDimensions() {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  }
 
   async componentDidMount() {
     loadApp()
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
   }
 
   render() {
     const app = this.props.app
     return app && <Layout>
         <Home/>
-        <Products/>
-        <Ideas/>
-        <Inspiration/>
-        <About/>
       </Layout>
   }
 }
