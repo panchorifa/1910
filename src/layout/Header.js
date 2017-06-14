@@ -62,10 +62,12 @@ class Header extends Component {
         <MediaQuery query='(min-device-width: 516px)'>
           <div className={css(styles.nav)}>
             <div style={{padding: '.75em .5em'}}>
+              { !home &&
                 <div style={{cursor: 'pointer', padding: '.1em 0 0 .1em'}}
                     onClick={this.handleClick.bind(this)}>
                   <Logo height={2}/>
                 </div>
+              }
             </div>
             <div className={css(styles.menu)}><Menu/></div>
           </div>
