@@ -13,6 +13,11 @@ const styles = StyleSheet.create({
     boxShadow: '2px 2px 6px rgba(0,0, 0, 0.2)',
     color: '#fff',
     fontSize: '1.4vh',
+    [upToSmall]: {
+      width: '24em',
+      margin: '0 auto 2em auto',
+      textAlign: 'center'
+    },
     [atLeastSmall]: {
       margin: '.5em'
     }
@@ -31,7 +36,7 @@ const styles = StyleSheet.create({
       paddingTop: 0,
     },
     [upToSmall]: {
-      flexDirection: 'row',
+      flexDirection: 'column',
     },
     [upToShort]: {
       [atLeastSmall]: {
@@ -46,7 +51,8 @@ const styles = StyleSheet.create({
   details: {
     padding: '0 0 .5em 0',
     [upToSmall]: {
-      marginTop: '-1.5em',
+      // marginTop: '-1.5em',
+      textAlign: 'center',
     }
   },
 
@@ -56,9 +62,9 @@ const styles = StyleSheet.create({
     padding: '1em 0 0 0',
     textAlign: 'center',
     [upToSmall]: {
-      textAlign: 'left',
       fontSize: '2.35em',
-      lineHeight: '1em'
+      lineHeight: '1em',
+      marginTop: '-.5em'
     }
   },
 
@@ -69,9 +75,6 @@ const styles = StyleSheet.create({
     lineHeight: '1.25em',
     color: '#999',
     textDecoration: 'none',
-    [upToSmall]: {
-      textAlign: 'left'
-    }
   },
 
   imageWrapper: {
@@ -88,7 +91,8 @@ const styles = StyleSheet.create({
     [upToSmall]: {
       maxWidth: '8em',
       height: '9em',
-      marginRight: '2em'
+      // border: '1px solid red'
+      // marginRight: '2em'
     }
   },
 

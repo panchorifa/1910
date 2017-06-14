@@ -8,12 +8,17 @@ import {msg} from '../libs/services'
 import {color1, color2, color3} from '../libs/colors'
 
 const styles = StyleSheet.create({
+  section: {
+    [upToSmall]: {
+      marginTop: '6em'
+    }
+  },
   ideas: {
     display: 'flex', flexFlow: 'column', justifyContent: 'center',
     maxWidth: '50em',
     margin: '0 auto',
     [upToSmall]: {
-      maxWidth: '100%'
+      maxWidth: '100%',
     },
     [atLeastSmall]: {
       padding: '0 1em',
@@ -28,7 +33,6 @@ const styles = StyleSheet.create({
       maxWidth: '100%',
     }
   },
-
   area: {
     borderRadius: '3px',
     fontSize: '1em',
@@ -56,6 +60,7 @@ class Ideas extends Component {
     const show = this.props.section === 2 || window.innerHeight < 737
 
     return show &&
+      <div className={css(styles.section)}>
         <Content prefix='ideas.title.prefix'
                  title='ideas.title.value'
                  description='ideas.description'>
@@ -68,6 +73,7 @@ class Ideas extends Component {
             </div>
           </div>
         </Content>
+      </div>
   }
 }
 

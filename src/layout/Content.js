@@ -9,7 +9,7 @@ import {color2} from '../libs/colors'
 
 const styles = StyleSheet.create({
   section: {
-    flexGrow: 1,
+    // flexGrow: 1,
     display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
     backgroundColor: '#fff',
     [upToSmall]: {
@@ -18,18 +18,22 @@ const styles = StyleSheet.create({
   },
   header: {
     flexGrow: 0,
-    maxHeight: '8em',
-    paddingBottom: '2em'
+    // maxHeight: '8em',
+    // paddingBottom: '2em'
   },
   content: {
-    flexGrow: 1,
+    flexGrow: 0,
     padding: 0,
     margin: '0 auto',
     display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
     width: '100%',
+    // border: '1px solid blue'
   },
   main: {
     flexGrow: 1,
+    [upToSmall]: {
+      marginTop: '2em'
+    }
   },
   subscription: {
     flexGrow: 0,
@@ -43,7 +47,7 @@ const styles = StyleSheet.create({
     width: '80%',
     margin: '0 auto',
     borderBottom: '1.5px solid #eee',
-    padding: '.5em 0'
+    padding: '.5em 0',
   },
 })
 
@@ -58,11 +62,12 @@ export default class Content extends Component {
           <h2 className={css(styles.title)}>
             <Label id={this.props.prefix}/> <Label style={{color:color2}} id={this.props.title}/>
           </h2>
+          <div style={{height: '3em'}}>
           { this.props.description && <Description id={this.props.description}/> }
+          </div>
         </div>
         <div className={css(styles.content)}>
-          <div className={css(styles.main)}>{children}</div>
-          <div className={css(styles.subscription)}><Subscriptions/></div>
+          <div className={css(styles.main)}>{children}</div>          
         </div>
       </div>
     )

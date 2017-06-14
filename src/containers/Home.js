@@ -7,6 +7,7 @@ import Languages from '../components/Languages'
 import {msg} from '../libs/services'
 import MediaQuery from 'react-responsive'
 import {color2} from '../libs/colors'
+import {upToSmall} from '../libs/media'
 
 
 const styles = StyleSheet.create({
@@ -20,6 +21,9 @@ const styles = StyleSheet.create({
     margin: '-6em auto 0 auto',
     borderRadius: '.25em',
     width: '23em',
+    [upToSmall]: {
+      margin: '0 auto',
+    }
   },
   software1: {
     textAlign: 'center',

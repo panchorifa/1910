@@ -108,13 +108,13 @@ export default class Layout extends Component {
         <div style={ {height: this.state.height+'px'} }>
           <Products/>
         </div>
-        <div style={ {height: this.state.height+'px'} }>
+        <div style={ {height: '600px'} }>
           <Ideas/>
         </div>
-        <div style={ {height: this.state.height+'px'} }>
+        <div style={ {height: '600px'} }>
           <Inspiration/>
         </div>
-        <div style={ {height: this.state.height+'px'} }>
+        <div style={ {height: '670px'} }>
           <About/>
         </div>
       </MediaQuery>

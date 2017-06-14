@@ -5,6 +5,7 @@ import Content              from '../layout/Content'
 import Product              from '../components/Product'
 import {msg}                from '../libs/services'
 import {upToSmall}          from '../libs/media'
+import Subscriptions        from '../components/SubscriptionSmall'
 
 
 const styles = StyleSheet.create({
@@ -22,7 +23,6 @@ class Products extends Component {
 
   render() {
     const productList = msg(this.props.lang, 'products.products')
-    console.log(window.innerHeight)
     const show = this.props.section === 0 || window.innerHeight < 737
     return (
        show &&
@@ -34,6 +34,7 @@ class Products extends Component {
               <Product {...product} key={'product'+this.props.lang+index}/>
             )) }
           </div>
+          <div className={css(styles.subscription)}><Subscriptions/></div>
       </Content>
     )
   }

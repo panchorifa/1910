@@ -12,7 +12,9 @@ const styles = StyleSheet.create({
         margin: '1em auto'
       },
       [upToSmall]: {
-        margin: '1em auto',
+        // border: '1px solid red',
+        // height: '8em',
+        // margin: '-1em auto',
         fontSize: '.85em'
       }
     }
