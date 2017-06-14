@@ -6,7 +6,6 @@ import {loadApp} from '../libs/services'
 
 const styles = StyleSheet.create({
   section: {
-    height: '100vh',
     display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
   	backgroundSize:  "cover",
   	backgroundColor: "#000",
@@ -45,7 +44,8 @@ export default class Layout extends Component {
   render() {
     return (
       <div class="wrapper">
-      <div className={css(styles.section)}>
+      <div style={ {height: this.state.height+'px'} } 
+           className={css(styles.section)}>
         <div style={{flexGrow: 0}}><Header/></div>
         <div className={css(styles.content)}>
           {this.props.children}

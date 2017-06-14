@@ -35,8 +35,8 @@ const styles = StyleSheet.create({
     display: 'inline-block',
     width: '4em',
     textAlign: 'center',
-    padding: '.4em',
-    marginLeft: '.5em',
+    padding: '8px',
+    margin: '0 0 0 .5em',
     verticalAlign: 'top'
   }
 })
