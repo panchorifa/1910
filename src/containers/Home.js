@@ -7,7 +7,11 @@ import Languages from '../components/Languages'
 import {msg} from '../libs/services'
 import MediaQuery from 'react-responsive'
 import {color2} from '../libs/colors'
-import {upToSmall} from '../libs/media'
+import {upToSmall, upToMedium,
+        atLeastMediumBig,
+        atLeastBig,
+        ipad, ipadPortrait,
+        upToMediumBig, upToBig} from '../libs/media'
 
 
 const styles = StyleSheet.create({
@@ -20,7 +24,18 @@ const styles = StyleSheet.create({
     margin: '14em auto',
     [upToSmall]: {
       margin: '0 auto',
-    }
+    },
+    ipad: {
+      border: '20px solid yellow'
+    },
+    ipadPortrait: {
+      marginTop: '24em',
+      border: '20px solid red'
+    },
+    [atLeastBig]: {
+      marginTop: '20em',
+      border: '20px solid blue'
+    },
   },
   languages: {
     marginTop: '2em',

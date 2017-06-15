@@ -42,8 +42,7 @@ class Products extends Component {
        show &&
       <Content prefix='products.title.prefix'
                title='products.title.value'
-               description='products.description'
-               maxDescriptionWidth='350px'>
+               description='products.description'>
           <div className={css(styles.products)}>
             { productList.map((product, index) => (
               <Product {...product} key={'product'+this.props.lang+index}/>

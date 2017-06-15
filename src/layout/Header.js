@@ -8,8 +8,12 @@ import { StyleSheet, css } from 'aphrodite'
 import Logo from '../components/Logo'
 import Menu from '../components/Menu'
 import BurgerMenu from './BurgerMenu'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 import {color2, color4} from '../libs/colors'
 import {upToSmall} from '../libs/media'
+import './Transitions.css'
+import {Motion, spring} from 'react-motion'
+
 
 const styles = StyleSheet.create({
   component: {
@@ -36,10 +40,15 @@ const styles = StyleSheet.create({
     width: '100vw',
     backgroundColor: '#000',
     display: 'flex', flexFlow: 'row', justifyContent: 'space-between',
-  }
+  },
 })
 
 const scroll = Scroll.animateScroll
+
+const Comps = [
+  <img src='/pancho.jpg'/>,
+  <img src='/nine.jpg'/>
+];
 
 class Header extends Component {
   constructor(props){
@@ -65,6 +74,8 @@ class Header extends Component {
     const home = this.props.section < 0
     const scrolled1 = this.props.scrolled1
     const scrolled2 = this.props.scrolled2
+    // const comp = React.cloneElement( Comps[0], { key: 1 } );
+
     return (
       <div className={css(styles.component)}>
         <MediaQuery query='(min-device-width: 516px)'>
@@ -90,7 +101,14 @@ class Header extends Component {
             <FontAwesome name="navicon" size='2x' style={{color: '#fff'}}/>
           </div>
         </div>
-        { this.props.burger && <BurgerMenu/> }
+          <Motion style={{x: spring(this.props.burger ? 0 : 500)}}>
+          {({x}) =>
+            <div style={{marginTop: '-3.5em',
+                WebkitTransform: `translate3d(${x}px, 0, 0)`,
+                transform: `translate3d(${x}px, 0, 0)`,
+              }}><BurgerMenu/></div>
+          }
+          </Motion>
         </MediaQuery>
       </div>
     )
@@ -107,3 +125,11 @@ const mapStateToProps = function(store) {
 }
 
 export default connect(mapStateToProps)(Header)
+
+// <ReactCSSTransitionGroup transitionName="menu"
+//     transitionAppear={true}
+//     transitionAppearTimeout={200}
+//     transitionEnterTimeout={2700}
+//     transitionLeaveTimeout={2700}>
+//   <BurgerMenu/>
+// </ReactCSSTransitionGroup>

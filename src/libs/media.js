@@ -15,3 +15,8 @@ export const upToThin = '@media only screen and (max-width: 1100px)'
 export const upToSkinny = '@media only screen and (max-width: 800px)'
 export const upToSkinnier = '@media only screen and (max-width: 600px)'
 export const upToSkinniest = '@media only screen and (max-width: 400px)'
+
+
+export const ipad = '@media all and (device-width: 768px)'
+export const ipadPortrait = '@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait)'
+export const ipadLandscape= '@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape)'

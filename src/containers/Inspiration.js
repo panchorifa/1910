@@ -9,7 +9,8 @@ class Inspiration extends Component {
     return show && <Content
               prefix='inspiration.title.prefix'
               title='inspiration.title.value'
-              description='inspiration.description'>
+              description='inspiration.description'
+              maxDescriptionWidth='520px'>
             <Quotes/>
         </Content>
   }

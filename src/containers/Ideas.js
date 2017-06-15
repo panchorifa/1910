@@ -39,7 +39,12 @@ const styles = StyleSheet.create({
   area: {
     borderRadius: '.25em',
     fontSize: '1em',
-    padding: '5px'
+    padding: '5px',
+    ':focus': {
+      outline: 'none !important',
+      border: '3px solid '+color2,
+      boxShadow: '0 0 10px #719ECE'
+    }
   },
   send: {
     backgroundColor: color2,
@@ -69,7 +74,7 @@ class Ideas extends Component {
                  description='ideas.description'>
           <div className={css(styles.ideas)}>
             <div className={css(styles.form)}>
-              <textarea autoFocus className={css(styles.area)} name="message"
+              <textarea className={css(styles.area)} name="message"
                   placeholder={message} rows="7"/>
               <div className={css(styles.send)}>
                 <Label id={'ideas.send'} style={{color: color3}}/>

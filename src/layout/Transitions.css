@@ -1,0 +1,30 @@
+.menu-appear {
+  opacity: 0.01;
+}
+
+.menu-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity .5s easy-in;
+}
+
+.menu-enter {
+  opacity: 0.01;
+  width: 0px;
+}
+
+.menu-enter.meun-enter-active {
+  opacity: 1;
+  width: 100px;
+  transition: 700ms;
+}
+
+.menu-leave {
+  opacity: 1;
+  width: 100px;
+}
+
+.menu-leave.menu-leave-active {
+  opacity: 0.01;
+  width: 0px;
+  transition: 700ms;
+}

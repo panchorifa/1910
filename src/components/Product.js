@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import Scroll from 'react-scroll'
 import {StyleSheet, css} from 'aphrodite'
-import {atLeastSmall, upToShort, upToSmall, upToSkinny} from '../libs/media'
+import {atLeastSmall, upToShort, upToSmall, upToSkinny, upToBig, atLeastBig} from '../libs/media'
 import {msg} from '../libs/services'
 import {color1, color2, color5} from '../libs/colors'
 
@@ -18,32 +18,25 @@ const styles = StyleSheet.create({
       width: '18em',
       margin: '0 5px 10px 5px',
       textAlign: 'center',
-      paddingTop: '1em'
+      paddingTop: '1em',
     },
     [atLeastSmall]: {
       margin: '.5em'
-    }
+    },
+    [atLeastBig]: {
+      width: '22em',
+      paddingTop: '1em'
+    },
   },
 
   productLink: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+    display: 'flex', flexFlow: 'column', justifyContent: 'center',
     textDecoration: 'none',
-    // backgroundColor: color2,
     padding: '1em',
     borderRadius: '.3em',
     color: '#fff',
     [upToSkinny]: {
       paddingTop: 0,
-    },
-    [upToSmall]: {
-      flexDirection: 'column',
-    },
-    [upToShort]: {
-      [atLeastSmall]: {
-        flexFlow: 'column',
-      },
     },
     [atLeastSmall]: {
       minWidth: '16em',
@@ -53,7 +46,6 @@ const styles = StyleSheet.create({
   details: {
     padding: '0 0 .5em 0',
     [upToSmall]: {
-      // marginTop: '-1.5em',
       textAlign: 'center',
     }
   },
@@ -82,10 +74,12 @@ const styles = StyleSheet.create({
   },
 
   imageWrapper: {
+    border: '2px solid '+color2,
     textAlign: 'center',
     height: '8em',
+    marginLeft: 'auto',
+    marginRight: 'auto',
     marginBottom: '-1.5em',
-    padding: '.5em',
     borderRadius: '.25em',
     display: 'flex', flexFlow: 'row', justifyContent:'center',
     backgroundColor: '#000',
@@ -137,8 +131,8 @@ class Product extends Component {
   render() {
     const description = msg(this.props.lang, `products.${this.id}.description`)
     const ideas = this.props.id === 'anyideas'
-    const style ={
-      backgroundColor: ideas ? '#000' : color2
+    const style = {
+      backgroundColor: ideas ? '#000' : color2,
     }
     const href = ideas ? 'javascript:void(0);' : this.link
     const target = ideas ? '' : '_blank'
@@ -146,7 +140,8 @@ class Product extends Component {
       <div style={style} className={css(styles.product)}>
         <a onClick={this.handleClick} className={css(styles.productLink)}
            rel={this.link} href={href} target="_blank">
-          <div className={css(styles.imageWrapper)}>
+          <div style={{padding: this.props.id === 'xmuni' ? '1em' : '.5em' }}
+              className={css(styles.imageWrapper)}>
             <img className={css(styles.image)} src={this.img} alt={`${this.name}`}/>
           </div>
           <div className={css(styles.details)}>

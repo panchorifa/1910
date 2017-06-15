@@ -54,9 +54,9 @@ const styles = StyleSheet.create({
   footer: {
     height:'3em',
     color: '#222',
-    position: 'fixed',
+    position: 'absolute',
     bottom: '.4em',
-    width: '100vw'
+    width: '100vw',
   }
 })
 
