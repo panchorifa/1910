@@ -57,17 +57,19 @@ const styles = StyleSheet.create({
 })
 
 export default class Content extends Component {
-  // prefix, title, description, children
+  // props: prefix, title, description, maxDescriptionWith, children
 
   render() {
-    let children = this.props.children
+    const children = this.props.children
+    const maxWidth = this.props.maxDescriptionWidth || null
+    const width = maxWidth ? maxWidth : '600px'
     return (
       <div className={css(styles.section)}>
         <div className={css(styles.header)}>
           <h2 className={css(styles.title)}>
             <Label id={this.props.prefix}/> <Label style={{color:color2}} id={this.props.title}/>
           </h2>
-          <div style={{height: '3em'}}>
+          <div style={{height: '3em', maxWidth: width, margin: '0 auto'}}>
           { this.props.description && <Description id={this.props.description}/> }
           </div>
         </div>

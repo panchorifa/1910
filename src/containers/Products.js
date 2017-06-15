@@ -39,10 +39,11 @@ class Products extends Component {
     const productList = msg(this.props.lang, 'products.products')
     const show = this.props.section === 0 || this.props.show
     return (
-       show &&       
+       show &&
       <Content prefix='products.title.prefix'
                title='products.title.value'
-               description='products.description'>
+               description='products.description'
+               maxDescriptionWidth='350px'>
           <div className={css(styles.products)}>
             { productList.map((product, index) => (
               <Product {...product} key={'product'+this.props.lang+index}/>

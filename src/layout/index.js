@@ -54,9 +54,9 @@ class Layout extends Component {
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
-  componentWillUnmount() {
-    window.removeEventListener('resize', this.updateWindowDimensions);
-  }
+  // componentWillUnmount() {
+    // window.removeEventListener('resize', this.updateWindowDimensions);
+  // }
 
   updateWindowDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
@@ -65,7 +65,7 @@ class Layout extends Component {
   async componentDidMount() {
     loadApp()
     this.updateWindowDimensions();
-    window.addEventListener('resize', this.updateWindowDimensions);
+    // window.addEventListener('resize', this.updateWindowDimensions);
   }
 
   scrolledBeforeLogo(value) {
@@ -108,7 +108,7 @@ class Layout extends Component {
         </MediaQuery>
 
         <MediaQuery query='(max-device-width: 515px)'>
-          <div style={{border:'1px solid red', flexGrow: 0, height: '5em',
+          <div style={{flexGrow: 0, height: '5em',
                 maxHeight: '5em',
                 minHeight: '5em', textAlign: 'center'}}>
             { !burger && !scrolled && <DownArrow/> }
