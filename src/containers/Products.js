@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
   products: {
     flexGrow: 1,
     display: 'flex', flexFlow: 'row wrap', justifyContent: 'center',
-    paddingTop: '1em',
+    paddingTop: '2em',
     [upToSmall]: {
       paddingTop: 0,
       margin: '-1em',

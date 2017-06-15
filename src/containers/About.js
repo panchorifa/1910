@@ -45,12 +45,13 @@ const styles = StyleSheet.create({
     [upToShort]: {
       height: '140px',
       [upToSmall]: {
-        margin: '1em 0 0 0',
+        margin: '1em 0 2em 0',
         height: '100px',
       },
     },
     [upToSmall]: {
       marginTop:'3em',
+      marginBottom:'3em',
       height: '140px',
     },
   },

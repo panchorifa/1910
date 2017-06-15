@@ -128,7 +128,7 @@ class Layout extends Component {
           <Element name="ideas" style={{height: '4em'}}></Element>
           <Ideas show={true}/>
         </div>
-        <div style={ {height: (this.state.height-60)+'px', position: 'relative'} }>
+        <div style={ {height: (this.state.height-40)+'px', position: 'relative'} }>
           <Element name="about"></Element>
           <About show={true}/>
           <div style={{position: 'absolute', bottom: '2em', width: '100vw'}}>

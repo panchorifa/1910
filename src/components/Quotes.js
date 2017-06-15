@@ -12,10 +12,10 @@ const styles = StyleSheet.create({
     cursor: 'pointer',
     padding: '0 1em',
     borderRadius: '2px',
-    margin: '1em auto',
+    margin: '2em auto',
     maxWidth: '680px',
     [upToSmall]: {
-      marginTop: '-1em',
+      marginTop: '1em',
       fontSize: '.6em',
     },
     [upToShort]: {

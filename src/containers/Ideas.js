@@ -27,16 +27,17 @@ const styles = StyleSheet.create({
     }
   },
   form: {
-    padding: '1em',
+    padding: '2em',
     backgroundColor: color1,
-    borderRadius: '2px',
+    borderRadius: '.25em',
     display: 'flex', flexFlow: 'column', justifyContent: 'center',
     [upToSmall]: {
       maxWidth: '100%',
+      padding: '2em'
     }
   },
   area: {
-    borderRadius: '3px',
+    borderRadius: '.25em',
     fontSize: '1em',
     padding: '5px'
   },
