@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
       flexGrow: 0,
       textAlign:'center', color: '#444',
       margin: '2em auto',
-      maxWidth: '420px',
+      maxWidth: '500px',
       [upToShort]: {
         margin: '1em auto'
       },

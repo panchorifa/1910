@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   logo: {
-    margin: '10em auto',
+    margin: '14em auto',
     [upToSmall]: {
       margin: '0 auto',
     }

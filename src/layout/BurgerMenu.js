@@ -4,7 +4,7 @@ import Scroll from 'react-scroll'
 import {store} from '../store'
 import {StyleSheet, css} from 'aphrodite'
 import FontAwesome from 'react-fontawesome'
-import {color2} from '../libs/colors'
+import {color1,color2,color3,color4,color5} from '../libs/colors'
 import Logo from '../components/Logo'
 
 const scroll = Scroll.animateScroll
@@ -12,26 +12,28 @@ const scroller = Scroll.scroller;
 
 const styles = StyleSheet.create({
   section: {
-    backgroundColor: color2,
+    backgroundColor: color3,
     height: '100vh',
     width: '100%',
     position: 'absolute', top: 0, left: 0,
     color: '#fff'
   },
   close: {
-    padding: '.75em',
+    color: '#222',
+    padding: '.75em 1em',
     textAlign: 'right'
   },
   menu: {
-    margin: '2em 1em',
+    margin: '3em 1em',
   },
   entry: {
-    borderBottom: '2px solid #0086b9',
+    borderBottom: '1px solid #ddd',
     padding: '.5em 1em',
     margin: '0 .5em',
     fontSize: '1.25em',
+    color: '#222',
     ':first-child': {
-      borderTop: '2px solid #0086b9'
+      borderTop: '1px solid #ddd'
     }
   }
 })
@@ -55,11 +57,14 @@ class BurgerMenu extends React.Component {
     return (
       <div className={css(styles.section)}>
         <div className={css(styles.close)}>
-          <div onClick={this.close.bind(this)}><FontAwesome name="close" size='2x'/></div>
+          <div onClick={this.close.bind(this)}>
+            <FontAwesome name="close" size='2x'/>
+          </div>
         </div>
-        <div style={{textAlign: 'center'}}><Logo height={2}/></div>
+        <div style={{textAlign: 'center'}}>
+          <Logo color={'black'} height={2}/>
+        </div>
         <div className={css(styles.menu)}>
-          <div onClick={this.handleClick.bind(this, 'home')} className={css(styles.entry)}>Home</div>
           <div onClick={this.handleClick.bind(this, 'products')} className={css(styles.entry)}>Products</div>
           <div onClick={this.handleClick.bind(this, 'inspiration')} className={css(styles.entry)}>Inspiration</div>
           <div onClick={this.handleClick.bind(this, 'ideas')} className={css(styles.entry)}>Ideas</div>

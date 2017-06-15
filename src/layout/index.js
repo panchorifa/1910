@@ -108,7 +108,9 @@ class Layout extends Component {
         </MediaQuery>
 
         <MediaQuery query='(max-device-width: 515px)'>
-          <div style={{flexGrow: 0, height: '5em', textAlign: 'center'}}>
+          <div style={{border:'1px solid red', flexGrow: 0, height: '5em',
+                maxHeight: '5em',
+                minHeight: '5em', textAlign: 'center'}}>
             { !burger && !scrolled && <DownArrow/> }
           </div>
         </MediaQuery>
@@ -129,10 +131,11 @@ class Layout extends Component {
         <div style={ {height: (this.state.height-60)+'px', position: 'relative'} }>
           <Element name="about"></Element>
           <About show={true}/>
-          <div style={{position: 'absolute', bottom: '.5em', width: '100vw'}}>
+          <div style={{position: 'absolute', bottom: '2em', width: '100vw'}}>
             <div style={{textAlign: 'center', margin: '0 auto'}}>&copy; 1910 Inc.</div>
           </div>
-          <div onClick={this.scrollToTop.bind(this)} style={{position: 'absolute', bottom: '.5em', right: '1em',
+          <div onClick={this.scrollToTop.bind(this)}
+              style={{position: 'absolute', bottom: '1.5em', right: '1em',
               backgroundColor: color2 ,color: '#fff', width: '3em', height: '3em',
               textAlign: 'center', borderRadius: '.2em', paddingTop:'.25em'}}>
             <FontAwesome name="chevron-up" size='2x'/>

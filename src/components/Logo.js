@@ -13,8 +13,9 @@ class Logo extends Component {
       color: this.color,
       userSelect: 'none'
     }
+    const src = this.color === 'black' ? 'black-1910.png' : 'white-1910.png'    
     return (
-      <img src="white-1910.png" alt='1910' style={style}/>
+      <img src={src} alt='1910' style={style}/>
     )
   }
 }
