@@ -14,33 +14,12 @@ const styles = StyleSheet.create({
   section :{
     flexGrow: 1,
     display: 'flex', flexFlow: 'column', justifyContent: 'center',
-    textAlign: 'center'
+    textAlign: 'center',
   },
   logo: {
-    margin: '0 auto',
+    margin: '10em auto',
     [upToSmall]: {
       margin: '0 auto',
-    }
-  },
-  software1: {
-    textAlign: 'center',
-    margin: '.25em 0 .5em 0',
-    padding: '.5em 1em',
-    fontWeight: 'bold',
-    fontSize: '1.4em',
-    backgroundColor: color2,
-    color: '#fff',
-    letterSpacing: '5px',
-    userSelect: 'none',
-    textTransform: 'uppercase',
-    [upToSmall]:{
-      letterSpacing: '-1px',
-    }
-  },
-  typer: {
-    fontSize: '2em',
-    [upToSmall]: {
-      fontSize: '1.5em'
     }
   },
   languages: {
@@ -57,23 +36,15 @@ class Home extends Component {
     return active && <div className={css(styles.section)}>
         <div className={css(styles.logo)}>
           <MediaQuery query='(min-device-width: 516px)'>
-            <Logo height={12}/>
+            <Logo height={9}/>
           </MediaQuery>
           <MediaQuery query='(max-device-width: 515px)'>
-            <Logo height={8}/>
+            <Logo height={6}/>
           </MediaQuery>
         </div>
 
-        <div className={css(styles.software1)}>{msg(lang, 'home.title')}</div>
-
-        <div className={css(styles.typer)}>
-           <Typer text={typer}
-            typeSpeed={20}
-            typeBackSpeed={30}
-            typeDelay={2000}></Typer>
-        </div>
         <MediaQuery query='(max-device-width: 515px)'>
-          <div className={css(styles.languages)}><Languages/></div>
+          <div className={css(styles.languages)}><Languages name={true}/></div>
         </MediaQuery>
       </div>
   }

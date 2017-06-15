@@ -17,10 +17,20 @@ const styles = StyleSheet.create({
 })
 
 class Languages extends Component {
-
   handleClick(lang) {
     store.dispatch({type: 'SET_LANG', lang: lang})
     loadQuote()
+  }
+
+  capitalize(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  label(lang) {
+    if (this.props.name) {
+      return this.capitalize(this.props.langs[lang].name)
+    }
+    return lang.toUpperCase()
   }
 
   render() {
@@ -33,7 +43,7 @@ class Languages extends Component {
             <div key={'lang'+index}
                 onClick={this.handleClick.bind(this, lang)}
                 style={{color: l === lang ? '#fff' : '#888'}}
-                className={css(styles.language)}>{lang.toUpperCase()}</div>
+                className={css(styles.language)}>{this.label(lang)}</div>
           ))
         }
       </div>

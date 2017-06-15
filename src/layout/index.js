@@ -108,9 +108,9 @@ class Layout extends Component {
         </MediaQuery>
 
         <MediaQuery query='(max-device-width: 515px)'>
-          { !burger && <div style={{flexGrow: 0, height: '5em', textAlign: 'center'}}>
-            { !scrolled && <DownArrow/> }
-          </div> }
+          <div style={{flexGrow: 0, height: '5em', textAlign: 'center'}}>
+            { !burger && !scrolled && <DownArrow/> }
+          </div>
         </MediaQuery>
       </div>
       <MediaQuery query='(max-device-width: 515px)'>
