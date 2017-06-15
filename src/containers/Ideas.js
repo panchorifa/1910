@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
 })
 
 class Ideas extends Component {
+
   render() {
     const message = msg(this.props.lang, 'ideas.message')
     const show = this.props.section === 2 || this.props.show
@@ -68,7 +69,8 @@ class Ideas extends Component {
                  description='ideas.description'>
           <div className={css(styles.ideas)}>
             <div className={css(styles.form)}>
-              <textarea className={css(styles.area)} name="message" placeholder={message} rows="7"/>
+              <textarea autoFocus className={css(styles.area)} name="message"
+                  placeholder={message} rows="7"/>
               <div className={css(styles.send)}>
                 <Label id={'ideas.send'} style={{color: color3}}/>
               </div>
@@ -86,3 +88,7 @@ const mapStateToProps = (store) => {
 }
 
 export default connect(mapStateToProps)(Ideas)
+
+// componentDidMount() {
+//   findDOMNode(this.refs.textarea).focus();
+// }

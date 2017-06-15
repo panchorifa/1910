@@ -23,20 +23,21 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   input: {
-    fontSize: '1.4em',
+    fontSize: '1em',
+    width: '14em',
     border: '1px solid '+color2,
     borderRadius: '3px',
-    padding: '3px 1px'
+    padding: '7px 6px'
   },
   button: {
     backgroundColor: color2,
     borderRadius: '3px',
     color: color3,
     display: 'inline-block',
-    width: '4em',
+    width: '6em',
     textAlign: 'center',
     padding: '8px',
-    margin: '0 0 0 .5em',
+    margin: '-1px 0 0 .5em',
     verticalAlign: 'top'
   }
 })
@@ -58,15 +59,19 @@ class SubscriptionSmall extends Component {
   }
 
   render() {
-    const subs = msg(this.props.lang, 'subscriptions')
+    const lang = this.props.lang
+    const subs = msg(lang, 'subscriptions')
     return (
       <div className={css(styles.section)}>
         <div className={css(styles.title)}>
           {subs.title.value}
         </div>
         <div className={css(styles.subscribe)}>
-          <input type="text" className={css(styles.input)}/>
-          <div className={css(styles.button)}>Signup</div>
+          <input type="text" placeholder="email"
+              className={css(styles.input)}/>
+          <div className={css(styles.button)}>
+            {msg(lang, 'misc.signup')}
+          </div>
         </div>
       </div>
     )

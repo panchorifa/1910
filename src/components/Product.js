@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
+import Scroll from 'react-scroll'
 import {StyleSheet, css} from 'aphrodite'
 import {atLeastSmall, upToShort, upToSmall, upToSkinny} from '../libs/media'
 import {msg} from '../libs/services'
@@ -113,6 +114,8 @@ const styles = StyleSheet.create({
   }
 })
 
+const scroller = Scroll.scroller
+
 class Product extends Component {
 
   constructor({id, name, link, img}) {
@@ -123,15 +126,26 @@ class Product extends Component {
     this.img = img
   }
 
+  handleClick = (e) => {
+    scroller.scrollTo('ideas', {
+      duration: 1500,
+      delay: 100,
+      smooth: true
+    })
+  }
+
   render() {
     const description = msg(this.props.lang, `products.${this.id}.description`)
     const ideas = this.props.id === 'anyideas'
     const style ={
       backgroundColor: ideas ? '#000' : color2
     }
+    const href = ideas ? 'javascript:void(0);' : this.link
+    const target = ideas ? '' : '_blank'
     return (
       <div style={style} className={css(styles.product)}>
-        <a className={css(styles.productLink)} rel={this.link} href={this.link} target="_blank">
+        <a onClick={this.handleClick} className={css(styles.productLink)}
+           rel={this.link} href={href} target="_blank">
           <div className={css(styles.imageWrapper)}>
             <img className={css(styles.image)} src={this.img} alt={`${this.name}`}/>
           </div>

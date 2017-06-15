@@ -8,7 +8,7 @@ import {StyleSheet, css} from 'aphrodite'
 import Header from './Header'
 import Footer from './Footer'
 import DownArrow from '../components/DownArrow'
-import {loadApp} from '../libs/services'
+import {loadApp, isMobile} from '../libs/services'
 import Inspiration from '../containers/Inspiration'
 import About from '../containers/About'
 import Ideas from '../containers/Ideas'
@@ -54,18 +54,22 @@ class Layout extends Component {
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
 
-  // componentWillUnmount() {
-    // window.removeEventListener('resize', this.updateWindowDimensions);
-  // }
+  componentWillUnmount() {
+    if(!isMobile()) {
+      window.removeEventListener('resize', this.updateWindowDimensions)
+    }
+  }
 
   updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
+    this.setState({ width: window.innerWidth, height: window.innerHeight })
   }
 
   async componentDidMount() {
     loadApp()
     this.updateWindowDimensions();
-    // window.addEventListener('resize', this.updateWindowDimensions);
+    if(!isMobile()) {
+      window.addEventListener('resize', this.updateWindowDimensions)
+    }
   }
 
   scrolledBeforeLogo(value) {
@@ -89,9 +93,10 @@ class Layout extends Component {
     const scrolled = this.state.scrolled
     const home = this.props.section < 0
     const burger = this.props.burger
+    const height = isMobile() ? this.state.height+'px' : '100vh'
     return (
       <div>
-      <div style={ {height: this.state.height+'px'} } className={css(styles.section)}>
+      <div style={ {height: height} } className={css(styles.section)}>
         <MediaQuery query='(max-device-width: 515px)'>
           <div><Waypoint onEnter={this.scrolled.bind(this, false)} onLeave={this.scrolled.bind(this, true)}/></div>
           <div className={css(styles.waypoint1)}><Waypoint onEnter={this.scrolledBeforeLogo.bind(this, false)} onLeave={this.scrolledBeforeLogo.bind(this, true)}/></div>

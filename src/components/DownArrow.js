@@ -1,6 +1,9 @@
 import React from 'react'
 import FontAwesome from 'react-fontawesome'
+import Scroll from 'react-scroll'
 import { StyleSheet, css } from 'aphrodite'
+
+const scroller = Scroll.scroller
 
 const styles = StyleSheet.create({
   arrow: {
@@ -34,9 +37,18 @@ const styles = StyleSheet.create({
 
 export default class DownArrow extends React.Component {
 
+  handleClick() {
+    scroller.scrollTo('products', {
+      duration: 1500,
+      delay: 100,
+      smooth: true
+    })
+  }
+
   render() {
     return(
-      <div className={css(styles.arrow, styles.animated, styles.bounce)}>
+      <div onClick={this.handleClick.bind(this)}
+           className={css(styles.arrow, styles.animated, styles.bounce)}>
         <FontAwesome name='chevron-down' size='2x' className={css(styles.glyph)} />
       </div>
     )

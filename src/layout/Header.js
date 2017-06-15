@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import FontAwesome from 'react-fontawesome'
 import MediaQuery from 'react-responsive'
+import Scroll from 'react-scroll'
 import { store } from '../store'
 import { StyleSheet, css } from 'aphrodite'
 import Logo from '../components/Logo'
@@ -38,6 +39,8 @@ const styles = StyleSheet.create({
   }
 })
 
+const scroll = Scroll.animateScroll
+
 class Header extends Component {
   constructor(props){
     super(props)
@@ -45,12 +48,17 @@ class Header extends Component {
       toggle: true
     }
   }
+
   handleClick() {
     store.dispatch({type:'SET_SECTION', section: -1})
   }
 
   toggleBurger() {
     store.dispatch({type: 'SET_BURGER', burger: true})
+  }
+
+  scrollToTop() {
+    scroll.scrollTo(0)
   }
 
   render() {
@@ -75,7 +83,7 @@ class Header extends Component {
         <MediaQuery query='(max-device-width: 515px)'>
         <div className={css(styles.burger)} style={
             {borderBottom: scrolled1 ? '1px solid #fff' : 'none'}}>
-          <div style={{padding: '1em .75em'}}>
+          <div onClick={this.scrollToTop.bind(this)} style={{padding: '1em .75em'}}>
             {scrolled2 && <Logo height={2}/>}
           </div>
           <div onClick={this.toggleBurger.bind(this)} style={{height: '4em', padding: '.75em'}}>

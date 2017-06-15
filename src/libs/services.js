@@ -7,7 +7,6 @@ async function load(url) {
   return await response.json()
 }
 
-
 async function post(url, data) {
   const response = await fetch(url, {
     method: 'POST',
@@ -51,7 +50,32 @@ export function subscribe(email) {
   post(url, {email: email, app: '1910'})
 }
 
-// function validEmail(email) {
-//   var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-//   return re.test(email)
-// }
+const devices = {
+  Android: function() {
+    return navigator.userAgent.match(/Android/i);
+  },
+  BlackBerry: function() {
+    return navigator.userAgent.match(/BlackBerry/i);
+  },
+  iOS: function() {
+    return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+  },
+  Opera: function() {
+    return navigator.userAgent.match(/Opera Mini/i);
+  },
+  Windows: function() {
+    return navigator.userAgent.match(/IEMobile/i);
+  },
+  any: function() {
+    return (devices.Android() || devices.BlackBerry() || devices.iOS() || devices.Opera() || devices.Windows());
+  }
+}
+
+export function isMobile() {
+  return devices.any()
+}
+
+export function validEmail(email) {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(email)
+}
