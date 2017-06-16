@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import {Glyphicon} from 'react-bootstrap'
 import MediaQuery from 'react-responsive'
 import FontAwesome from 'react-fontawesome'
 import {store} from '../store'
@@ -28,11 +27,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     overflowY: 'scroll',
     display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
-    padding: 0, margin: 0,
-  },
-  glyph: {
-    color: 'red',
-    fontSize: '8em'
+    margin: 0, padding: 0
   },
   waypoint1: {
     position: 'absolute',
@@ -104,8 +99,8 @@ class Layout extends Component {
         </MediaQuery>
         <div style={{flexGrow: 0}}><Header/></div>
         <div style={{backgroundColor: home ? '#000' : '#fff'}}
-            className={css(styles.content)}>
-            <Element name="home"></Element>
+             className={css(styles.content)}>
+          <Element name="home"></Element>
           {this.props.children}
         </div>
         <MediaQuery query='(min-device-width: 516px)'>
@@ -121,7 +116,7 @@ class Layout extends Component {
         </MediaQuery>
       </div>
       <MediaQuery query='(max-device-width: 515px)'>
-        <div style={ {height: (this.state.height+100)+'px'} }>
+        <div style={ {marginTop: '-2em', height: (this.state.height+100)+'px'} }>
           <Element name="products" style={{height: '4em'}}></Element>
           <Products show={true}/>
         </div>

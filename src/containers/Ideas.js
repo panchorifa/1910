@@ -3,17 +3,11 @@ import { connect } from 'react-redux'
 import { StyleSheet, css } from 'aphrodite'
 import Content from '../layout/Content'
 import Label from '../components/Label'
-import {upToSmall, atLeastSmall} from '../libs/media'
+import {upToSmall, upToShorty, atLeastSmall, atLeastMediumBig} from '../libs/media'
 import {msg} from '../libs/services'
 import {color1, color2, color3} from '../libs/colors'
 
 const styles = StyleSheet.create({
-  section: {
-    display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
-    [upToSmall]: {
-      marginTop: '8em'
-    }
-  },
   ideas: {
     display: 'flex', flexFlow: 'column', justifyContent: 'center',
     maxWidth: '50em',
@@ -24,7 +18,13 @@ const styles = StyleSheet.create({
     },
     [atLeastSmall]: {
       padding: '1em',
-    }
+    },
+    [atLeastMediumBig]: {
+      paddingTop: '2em'
+    },
+    [upToShorty]: {
+      marginTop: '1.5em',
+    },
   },
   form: {
     padding: '2em',

@@ -4,7 +4,8 @@ import { StyleSheet, css }  from 'aphrodite'
 import Content              from '../layout/Content'
 import Product              from '../components/Product'
 import {msg}                from '../libs/services'
-import {upToSmall}          from '../libs/media'
+import {upToSmall, upToShorty,
+        atLeastMediumBig, atLeastBig} from '../libs/media'
 import Subscriptions        from '../components/SubscriptionSmall'
 
 
@@ -19,8 +20,18 @@ const styles = StyleSheet.create({
     paddingTop: '2em',
     [upToSmall]: {
       paddingTop: 0,
-      margin: '-1em',
     },
+    [upToShorty]: {
+      paddingTop: '5em'
+    },
+    [atLeastMediumBig]: {
+      maxWidth: '70%',
+      margin: '0 auto'
+    },
+    [atLeastBig]: {
+      maxWidth: '85%',
+      margin: '0 auto'
+    }
   },
   subscription: {
     flexGrow: 0,

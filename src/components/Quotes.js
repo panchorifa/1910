@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import { StyleSheet, css } from 'aphrodite'
-import { upToSmall, upToShort, atLeastSmall } from '../libs/media'
+import { upToSmall, upToShorty, upToTall, atLeastSmall } from '../libs/media'
 import {loadQuote} from '../libs/services'
 import {color1, color3} from '../libs/colors'
 
@@ -18,14 +18,14 @@ const styles = StyleSheet.create({
       marginTop: '1em',
       fontSize: '.6em',
     },
-    [upToShort]: {
-      fontSize: '.6em',
-    },
     [atLeastSmall]: {
-      // maxWidth: '70em',
       minHeight: '12.75em',
       paddingTop: '1em',
-    }
+    },
+    [upToShorty]: {
+      marginTop: '2em',
+      fontSize: '.8em',
+    },
   },
 
   block: {
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     backgroundColor: color1,
     color: color3,
     padding: '1em',
-    height: '21em',
+    height: '20em',
     borderRadius: '.25em',
   },
 
@@ -49,6 +49,9 @@ const styles = StyleSheet.create({
     [atLeastSmall]: {
       fontSize: '1.6em',
       padding: '0 4em'
+    },
+    [upToTall]: {
+
     },
     ':before': {
       fontSize: '6em',
@@ -85,10 +88,6 @@ class Quotes extends Component {
   nextQuote() {
     loadQuote()
   }
-
-  // componentWillMount() {
-  //   this.nextQuote()
-  // }
 
   render() {
     const quote = this.props.quote

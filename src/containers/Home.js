@@ -7,7 +7,7 @@ import Languages from '../components/Languages'
 import {msg} from '../libs/services'
 import MediaQuery from 'react-responsive'
 import {color2} from '../libs/colors'
-import {upToSmall, upToMedium,
+import {upToSmall, upToMedium, upToSkinny,
         atLeastMediumBig,
         atLeastBig,
         ipad, ipadPortrait,
@@ -21,20 +21,22 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   logo: {
-    margin: '14em auto',
+    margin: '0 auto',
     [upToSmall]: {
-      margin: '0 auto',
+      // margin: '0 auto',
     },
     ipad: {
-      border: '20px solid yellow'
+      // border: '20px solid yellow'
     },
     ipadPortrait: {
-      marginTop: '24em',
-      border: '20px solid red'
+      // marginTop: '24em',
+      // border: '20px solid red'
     },
+  },
+  blogo: {
+    margin: '30% auto 0 auto',
     [atLeastBig]: {
-      marginTop: '20em',
-      border: '20px solid blue'
+      marginTop: '40%',
     },
   },
   languages: {
@@ -51,7 +53,9 @@ class Home extends Component {
     return active && <div className={css(styles.section)}>
         <div className={css(styles.logo)}>
           <MediaQuery query='(min-device-width: 516px)'>
-            <Logo height={9}/>
+            <div className={css(styles.blogo)}>
+              <Logo height={9}/>
+            </div>
           </MediaQuery>
           <MediaQuery query='(max-device-width: 515px)'>
             <Logo height={6}/>

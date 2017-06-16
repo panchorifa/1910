@@ -1,8 +1,11 @@
 import React, {Component} from 'react'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
+import {store} from '../store'
 import Scroll from 'react-scroll'
 import {StyleSheet, css} from 'aphrodite'
-import {atLeastSmall, upToShort, upToSmall, upToSkinny, upToBig, atLeastBig} from '../libs/media'
+import {atLeastSmall, upToShorty, upToSmall, upToSkinny, upToBig,
+        atLeastMediumBig,
+        atLeastBig} from '../libs/media'
 import {msg} from '../libs/services'
 import {color1, color2, color5} from '../libs/colors'
 
@@ -14,14 +17,23 @@ const styles = StyleSheet.create({
     boxShadow: '2px 2px 6px rgba(0,0, 0, 0.2)',
     color: '#fff',
     fontSize: '1.4vh',
+    width: '18em',
     [upToSmall]: {
-      width: '18em',
+      fontSize: '.6em',
       margin: '0 5px 10px 5px',
       textAlign: 'center',
       paddingTop: '1em',
     },
+    [upToShorty]: {
+      paddingTop: '1em',
+      width: '17em',
+      fontSize: '.7em',
+    },
     [atLeastSmall]: {
       margin: '.5em'
+    },
+    [atLeastMediumBig]: {
+      paddingTop: '1em'
     },
     [atLeastBig]: {
       width: '22em',
@@ -84,12 +96,15 @@ const styles = StyleSheet.create({
     display: 'flex', flexFlow: 'row', justifyContent:'center',
     backgroundColor: '#000',
     borderRadius: '10em',
-    [upToSkinny]: {
-      maxWidth: '10em',
-      width: '12vh',
-    },
+    // [upToSkinny]: {
+    //   maxWidth: '10em',
+    //   width: '12vh',
+    // },
     [upToSmall]: {
       maxWidth: '8em',
+    },
+    [upToShorty]: {
+      width: '8em',
     }
   },
 
@@ -102,8 +117,12 @@ const styles = StyleSheet.create({
       textAlign: 'left',
     },
     [atLeastSmall]: {
-      width: '10vh',
+      width: '9vh',
       padding: '1em'
+    },
+    [upToShorty]: {
+      width: '7em',
+      padding: '1em',
     }
   }
 })
@@ -121,6 +140,7 @@ class Product extends Component {
   }
 
   handleClick = (e) => {
+    store.dispatch({type: 'SET_SECTION', section: 2})
     scroller.scrollTo('ideas', {
       duration: 1500,
       delay: 100,

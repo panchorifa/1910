@@ -9,6 +9,8 @@ export const atLeastMediumBig = '@media only screen and (min-width : 768px)'
 export const atLeastBig = '@media only screen and (min-width : 1050px)'
 export const atLeastHuge = '@media only screen and (min-width : 1242px)'
 
+export const upToShorty = '@media only screen and (max-height: 414px)'
+export const upToTall = '@media only screen and (max-height: 620px)'
 export const upToShort = '@media only screen and (max-height: 880px)'
 export const atLeastShort = '@media only screen and (min-height: 881px)'
 export const upToThin = '@media only screen and (max-width: 1100px)'

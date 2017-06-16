@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     padding: '1em'
   },
   close: {
-    color: '#888',
+    color: '#222',
     padding: '.75em 1em',
     textAlign: 'right'
   },

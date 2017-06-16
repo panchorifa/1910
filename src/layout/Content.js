@@ -3,7 +3,7 @@ import {StyleSheet, css} from 'aphrodite'
 import Label from '../components/Label'
 import Description from './Description'
 import Subscriptions from './Subscriptions'
-import {upToSmall} from '../libs/media'
+import {upToSmall, upToShorty, upToShort, upToTall} from '../libs/media'
 import {color2} from '../libs/colors'
 
 
@@ -12,16 +12,14 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
     backgroundColor: '#fff',
-    // border: '1px solid blue',
     [upToSmall]: {
       flexGrow: 0,
-      padding: '0 1em'
+      padding: '0 1em',
+      // border: '10px solid red',
     },
   },
   header: {
     flexGrow: 0,
-    // maxHeight: '8em',
-    // paddingBottom: '2em'
   },
   content: {
     flexGrow: 1,
@@ -29,7 +27,6 @@ const styles = StyleSheet.create({
     margin: '0 auto',
     display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
     width: '100%',
-    // border: '1px solid red'
   },
   main: {
     flexGrow: 1,
@@ -40,6 +37,12 @@ const styles = StyleSheet.create({
   subscription: {
     flexGrow: 0,
     [upToSmall]: {
+      display: 'none'
+    },
+    [upToShorty]: {
+      display: 'none'
+    },
+    [upToTall]: {
       display: 'none'
     }
   },
@@ -53,7 +56,17 @@ const styles = StyleSheet.create({
     margin: '0 auto',
     borderBottom: '1.5px solid #eee',
     padding: '.5em 0',
+    [upToShorty]: {
+      display: 'none'
+    }
   },
+  description: {
+    height: '3em',
+    margin: '0 auto',
+    [upToShorty]: {
+      display: 'none'
+    }
+  }
 })
 
 export default class Content extends Component {
@@ -69,7 +82,7 @@ export default class Content extends Component {
           <h2 className={css(styles.title)}>
             <Label id={this.props.prefix}/> <Label style={{color:color2}} id={this.props.title}/>
           </h2>
-          <div style={{height: '3em', maxWidth: width, margin: '0 auto'}}>
+          <div style={{maxWidth: width}} className={css(styles.description)}>
           { this.props.description && <Description id={this.props.description}/> }
           </div>
         </div>

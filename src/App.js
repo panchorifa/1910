@@ -9,12 +9,15 @@ import Products from './containers/Products'
 import Layout from './layout'
 import {loadApp} from './libs/services'
 import MediaQuery from 'react-responsive'
-import {atLeastSmall} from './libs/media'
+import {upToSmall, atLeastSmall} from './libs/media'
 
 const styles = StyleSheet.create({
   content: {
     flexGrow:1,
     display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
+    [upToSmall]:{
+      marginTop: '3em'
+    }
   }
 })
 

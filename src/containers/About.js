@@ -4,7 +4,7 @@ import { StyleSheet, css } from 'aphrodite'
 import Content from '../layout/Content'
 import Label from '../components/Label'
 import Map from '../components/Map'
-import {upToSmall, upToShort, atLeastSmall} from '../libs/media'
+import {upToSmall, upToShorty, atLeastSmall} from '../libs/media'
 import {color2} from '../libs/colors'
 
 
@@ -19,7 +19,10 @@ const styles = StyleSheet.create({
     [atLeastSmall]: {
       maxWidth: '960px',
       margin: '0 auto'
-    }
+    },
+    [upToShorty]: {
+      marginTop: '2em'
+    },
   },
   section: {
     flexBasis: 'auto',
@@ -42,7 +45,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '220px',
     margin: '1em 0 0 0',
-    [upToShort]: {
+    [upToShorty]: {
       height: '140px',
       [upToSmall]: {
         margin: '1em 0 2em 0',
