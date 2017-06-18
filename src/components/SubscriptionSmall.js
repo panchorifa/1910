@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { store } from '../store'
 import { StyleSheet, css } from 'aphrodite'
-import { msg } from '../libs/services'
+import { subscribe, msg, validEmail } from '../libs/services'
 import { color2, color3, color4 } from '../libs/colors'
 
 const styles = StyleSheet.create({
@@ -25,7 +25,6 @@ const styles = StyleSheet.create({
   input: {
     fontSize: '1em',
     width: '14em',
-    border: '1px solid '+color2,
     borderRadius: '3px',
     padding: '7px 6px'
   },
@@ -44,35 +43,57 @@ const styles = StyleSheet.create({
 
 
 class SubscriptionSmall extends Component {
-
-  handleInputChange(evt) {
-    evt.preventDefault()
-    store.dispatch({type:'SET_SUBSCRIBER', email: evt.target.value})
-    this.forceUpdate()
+  constructor(props){
+    super(props)
+    this.state = { email: '', subscribed: false, invalid: false }
   }
 
-  handleSubmit(evt) {
-    evt.preventDefault()
-    if (this.props.subscriber.valid) {
-      store.dispatch({type:'ADD_SUBSCRIBER'})
+  handleChange = (event) => {
+    this.setState({email: event.target.value})
+  }
+
+  handleSignup = (e) => {
+    console.log(this.state.email)
+    console.log(validEmail(this.state.email))
+    if(validEmail(this.state.email)) {
+      subscribe(this.state.email)
+      this.setState({ invalid: false, subscribed: true })
+    } else {
+      this.setState({ invalid: true })
     }
   }
 
   render() {
     const lang = this.props.lang
     const subs = msg(lang, 'subscriptions')
+    const color = this.state.invalid ? 'red' : color2
+    const style = { border: '1px solid ' + color }
     return (
       <div className={css(styles.section)}>
+        { this.state.subscribed &&
+        <div className={css(styles.title)}>
+          <div style={{color: color2}}>You have been subscribed. Thank you.</div>
+        </div> }
+
+        { !this.state.subscribed &&
         <div className={css(styles.title)}>
           {subs.title.value}
-        </div>
+        </div> }
+        { !this.state.subscribed &&
         <div className={css(styles.subscribe)}>
-          <input type="text" placeholder="email"
-              className={css(styles.input)}/>
-          <div className={css(styles.button)}>
+          <input onChange={this.handleChange}
+                 style={style}
+                 type="text" placeholder="email"
+                 className={css(styles.input)}/>
+          <div onClick={this.handleSignup} className={css(styles.button)}>
             {msg(lang, 'misc.signup')}
           </div>
-        </div>
+        </div> }
+        { this.state.invalid && <div style={{color: 'red',
+            textAlign: 'center', marginLeft: '-8em'}}>
+          Please enter a valid email.
+        </div>}
+
       </div>
     )
   }

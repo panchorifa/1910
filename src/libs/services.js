@@ -12,8 +12,8 @@ async function post(url, data) {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json',
+      // 'Accept': 'application/json',
+      // 'Content-Type': 'application/json',
     },
     requestContext: {}
   })
@@ -45,9 +45,13 @@ export function msg(lang, id) {
 }
 
 export function subscribe(email) {
-  console.log(email)
   const url = store.getState().app.links.subscribers
-  post(url, {email: email, app: '1910'})
+  post(url, {email: email, app: "1910"})
+}
+
+export function sendIdea(idea) {
+  const url = store.getState().app.links.ideas
+  post(url, {content: idea, app: "1910"})
 }
 
 const devices = {

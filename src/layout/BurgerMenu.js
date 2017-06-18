@@ -104,7 +104,7 @@ class BurgerMenu extends React.Component {
             </div>
           )) }
         </div>
-        <div style={{marginTop:'3em'}}>
+        <div style={{marginTop:'3em', color: '#222'}}>
           <SubscriptionSmall/>
         </div>
         <div className={css(styles.footer)}>
