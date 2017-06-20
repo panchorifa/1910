@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     boxShadow: '2px 2px 6px rgba(0,0, 0, 0.2)',
     color: '#fff',
     fontSize: '1.4vh',
-    width: '18em',
+    width: '19em',
     [upToSmall]: {
       fontSize: '.6em',
       margin: '0 5px 10px 5px',

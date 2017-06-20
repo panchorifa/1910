@@ -45,12 +45,9 @@ class Home extends Component {
           </MediaQuery>
           <MediaQuery query='(max-device-width: 515px)'>
             <Logo height={6}/>
+            <div className={css(styles.languages)}><Languages name={true}/></div>
           </MediaQuery>
         </div>
-
-        <MediaQuery query='(max-device-width: 515px)'>
-          <div className={css(styles.languages)}><Languages name={true}/></div>
-        </MediaQuery>
       </div>
   }
 }
