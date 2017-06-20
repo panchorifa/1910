@@ -17,27 +17,13 @@ import {upToSmall, upToMedium, upToSkinny,
 const styles = StyleSheet.create({
   section :{
     flexGrow: 1,
-    display: 'flex', flexFlow: 'column', justifyContent: 'center',
+    display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
     textAlign: 'center',
   },
   logo: {
     margin: '0 auto',
-    [upToSmall]: {
-      // margin: '0 auto',
-    },
-    ipad: {
-      // border: '20px solid yellow'
-    },
-    ipadPortrait: {
-      // marginTop: '24em',
-      // border: '20px solid red'
-    },
-  },
-  blogo: {
-    margin: '30% auto 0 auto',
-    [atLeastBig]: {
-      marginTop: '40%',
-    },
+    flexGrow: 1,
+    display: 'flex', flexFlow: 'column', justifyContent: 'center',
   },
   languages: {
     marginTop: '2em',

@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import {withRouter} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {StyleSheet, css} from 'aphrodite'
 import Home from './containers/Home'
@@ -39,25 +40,27 @@ class App extends Component {
   }
 
   render() {
+    const nothome = this.props.section > -1
     const app = this.props.app
     return app && <Layout>
         <Home/>
-        <MediaQuery query='(min-device-width: 516px)'>
+        { nothome && <MediaQuery query='(min-device-width: 516px)'>
         <div className={css(styles.content)}>
           <Products show={false}/>
           <Inspiration show={false}/>
           <Ideas show={false}/>
           <About show={false}/>
         </div>
-        </MediaQuery>
+        </MediaQuery> }
       </Layout>
   }
 }
 
 const mapStateToProps = (store) => {
   return {
-    app: store.app
+    app: store.app,
+    section: store.section
   }
 }
 
-export default connect(mapStateToProps)(App)
+export default withRouter(connect(mapStateToProps)(App))

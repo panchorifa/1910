@@ -83,7 +83,6 @@ class Layout extends Component {
     this.setState({scrolled: value})
   }
 
-
   render() {
     const scrolled = this.state.scrolled
     const home = this.props.section < 0

@@ -89,6 +89,8 @@ const styles = StyleSheet.create({
     border: '2px solid '+color2,
     textAlign: 'center',
     height: '8em',
+    width: '8em',
+    marginTop: '1em',
     marginLeft: 'auto',
     marginRight: 'auto',
     marginBottom: '-1.5em',
@@ -96,10 +98,6 @@ const styles = StyleSheet.create({
     display: 'flex', flexFlow: 'row', justifyContent:'center',
     backgroundColor: '#000',
     borderRadius: '10em',
-    // [upToSkinny]: {
-    //   maxWidth: '10em',
-    //   width: '12vh',
-    // },
     [upToSmall]: {
       maxWidth: '8em',
     },

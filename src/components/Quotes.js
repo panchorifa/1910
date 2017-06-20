@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
     borderRadius: '2px',
     margin: '2em auto',
     maxWidth: '680px',
+    fontSize: '1em',
     [upToSmall]: {
       marginTop: '1em',
       fontSize: '.6em',
