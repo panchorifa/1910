@@ -37,15 +37,22 @@ const styles = StyleSheet.create({
     margin: '3em .5em',
   },
   entry: {
-    borderBottom: '1px solid #eee',
+    backgroundColor: '#222',
+    borderBottom: '1px solid #444',
     padding: '.5em 1em',
     margin: '0 .5em',
     fontSize: '1.25em',
-    color: '#666',
+    color: '#fff',
     borderLeft: '1px solid #eee',
     borderRight: '1px solid #eee',
     ':first-child': {
-      borderTop: '1px solid #eee'
+      borderTop: '1px solid #eee',
+      borderTopLeftRadius: '.25em',
+      borderTopRightRadius: '.25em',
+    },
+    ':last-child': {
+      borderBottomLeftRadius: '.25em',
+      borderBottomRightRadius: '.25em',
     }
   },
   entry2: {

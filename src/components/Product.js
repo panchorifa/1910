@@ -29,15 +29,24 @@ const styles = StyleSheet.create({
       width: '17em',
       fontSize: '.7em',
     },
-    [atLeastSmall]: {
-      margin: '.5em'
-    },
     [atLeastMediumBig]: {
-      paddingTop: '1em'
+      paddingTop: '1em',
+      // border: '1px solid red',
+      width: '17em',
+      '@media screen and (orientation:landscape) and (max-height: 768px)': {
+        width: '22em',
+      }
     },
     [atLeastBig]: {
       width: '22em',
-      paddingTop: '1em'
+      paddingTop: '1em',
+      // border: '1px solid blue',
+    },
+    [atLeastSmall]: {
+      margin: '.5em',
+      '@media screen and (orientation:landscape) and (max-height: 515px)': {
+        width: '15.7em',
+      }
     },
   },
 
@@ -64,7 +73,7 @@ const styles = StyleSheet.create({
 
   title: {
     fontWeight: 'bold',
-    fontSize: '1.7em',
+    fontSize: '1.75em',
     padding: '1.4em 0 0 0',
     textAlign: 'center',
     [upToSmall]: {
@@ -82,6 +91,9 @@ const styles = StyleSheet.create({
     textDecoration: 'none',
     [upToSmall]: {
       padding: '.25em 0 0 0'
+    },
+    [atLeastMediumBig]: {
+      fontSize: '1.25em',
     }
   },
 
@@ -103,6 +115,9 @@ const styles = StyleSheet.create({
     },
     [upToShorty]: {
       width: '8em',
+    },
+    '@media screen and (orientation:landscape) and (max-height: 768px)': {
+      marginTop: '-1em'
     }
   },
 

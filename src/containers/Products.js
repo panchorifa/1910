@@ -4,7 +4,7 @@ import { StyleSheet, css }  from 'aphrodite'
 import Content              from '../layout/Content'
 import Product              from '../components/Product'
 import {msg}                from '../libs/services'
-import {upToSmall, upToShorty,
+import {upToSmall, upToShorty, atLeastSmall,
         atLeastMediumBig, atLeastBig} from '../libs/media'
 import Subscriptions        from '../components/SubscriptionSmall'
 
@@ -31,6 +31,12 @@ const styles = StyleSheet.create({
     [atLeastBig]: {
       maxWidth: '85%',
       margin: '0 auto'
+    },
+    [atLeastSmall]: {
+      '@media screen and (orientation:landscape) and (max-height: 515px)': {
+        marginTop: '-1em',
+        maxWidth: '100%',
+      }
     }
   },
   subscription: {

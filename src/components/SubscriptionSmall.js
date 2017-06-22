@@ -8,7 +8,8 @@ import { color2, color3, color4 } from '../libs/colors'
 const styles = StyleSheet.create({
   section: {
     flexGrow: 0,
-    padding: '1em 0 2em 0',
+    padding: '0 0 2em 0',
+    marginTop: '-1em'
   },
   title: {
     color: color4,
@@ -36,7 +37,7 @@ const styles = StyleSheet.create({
     width: '6em',
     textAlign: 'center',
     padding: '8px',
-    margin: '-1px 0 0 .5em',
+    margin: '0 0 0 .5em',
     verticalAlign: 'top'
   }
 })

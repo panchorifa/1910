@@ -8,8 +8,7 @@ import {msg} from '../libs/services'
 import MediaQuery from 'react-responsive'
 import {color2} from '../libs/colors'
 import {upToSmall, upToMedium, upToSkinny,
-        atLeastMediumBig,
-        atLeastBig,
+        atLeastSmall, atLeastMediumBig, atLeastBig,
         ipad, ipadPortrait,
         upToMediumBig, upToBig} from '../libs/media'
 
@@ -24,6 +23,18 @@ const styles = StyleSheet.create({
     margin: '0 auto',
     flexGrow: 1,
     display: 'flex', flexFlow: 'column', justifyContent: 'center',
+    [atLeastSmall]: {
+      marginTop: '-6em',
+      '@media screen and (orientation:landscape) and (max-height: 515px)': {
+        marginTop: 0
+      }
+    },
+    [atLeastMediumBig]: {
+      marginTop: '-12em',
+    },
+    '@media screen and (orientation:landscape) and (max-height: 768px)': {
+      marginTop: '-3em'
+    }
   },
   languages: {
     marginTop: '2em',

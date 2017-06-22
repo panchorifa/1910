@@ -17,14 +17,17 @@ const styles = StyleSheet.create({
       maxWidth: '100%',
       marginTop: '-1em'
     },
-    [atLeastSmall]: {
-      padding: '1em',
-    },
     [atLeastMediumBig]: {
       paddingTop: '2em'
     },
     [upToShorty]: {
       marginTop: '1.5em',
+    },
+    [atLeastSmall]: {
+      padding: '1em',
+      '@media screen and (orientation:landscape) and (max-height: 515px)': {
+        margin: '.5em .25em 0 .25em',
+      }
     },
   },
   form: {
@@ -36,7 +39,12 @@ const styles = StyleSheet.create({
     [upToSmall]: {
       maxWidth: '100%',
       padding: '2em'
-    }
+    },
+    [atLeastSmall]: {
+      '@media screen and (orientation:landscape) and (max-height: 515px)': {
+        height: '17em',
+      }
+    },
   },
   form2: {
     height: '20em',
@@ -67,7 +75,10 @@ const styles = StyleSheet.create({
     },
     [atLeastSmall] :{
       width: '20em',
-      margin: '1em auto 0 auto'
+      margin: '1em auto 0 auto',
+      '@media screen and (orientation:landscape) and (max-height: 515px)': {
+        margin: '0 auto',
+      }
     }
   },
   thankyou: {

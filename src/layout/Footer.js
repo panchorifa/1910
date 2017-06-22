@@ -13,9 +13,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     position: 'relative',
     width: '100vw',
-    // maxWidth: '960px',
     margin: '0 auto',
-    // border: '1px solid red'
   },
   languages: {
     position: 'absolute',
@@ -23,23 +21,11 @@ const styles = StyleSheet.create({
     top: '7px'
   },
   copyr: {
-    display: 'flex', flexFlow: 'row', justifyContent: 'center',
-    width: '7em',
     margin: '0 auto',
-    color: '#fff'
-  },
-  logo: {
-    paddingTop: '6px'
-  },
-  reg: {
     color: '#555',
-    fontSize: '1.4em',
-    verticalAlign: 'bottom',
-    margin: '4px 0 0 4px',
+    fontSize: '1.1em',
+    lineHeight: '2.4em'
   },
-  year: {
-    padding: '6px 0 0 5px'
-  }
 })
 
 class Footer extends Component {
@@ -47,9 +33,7 @@ class Footer extends Component {
     return (
       <div className={css(styles.section)}>
         <div className={css(styles.copyr)}>
-          <div className={css(styles.logo)}><Logo height={1.2}/></div>
-          <div className={css(styles.reg)}>&reg;</div>
-          <div className={css(styles.year)}>2017</div>
+          &copy; 1910 Inc
         </div>
         <MediaQuery query='(min-device-width: 516px)'>
           <div className={css(styles.languages)}><Languages/></div>

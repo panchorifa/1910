@@ -16,12 +16,15 @@ const styles = StyleSheet.create({
       justifyContent: 'stretch',
       marginTop: '-4em'
     },
-    [atLeastSmall]: {
-      maxWidth: '960px',
-      margin: '0 auto'
-    },
     [upToShorty]: {
       marginTop: '2em'
+    },
+    [atLeastSmall]: {
+      maxWidth: '960px',
+      margin: '0 auto',
+      '@media screen and (orientation:landscape) and (max-height: 515px)': {
+        marginTop: '1em'
+      }
     },
   },
   section: {
@@ -57,6 +60,11 @@ const styles = StyleSheet.create({
       marginBottom:'3em',
       height: '140px',
     },
+    [atLeastSmall]: {
+      '@media screen and (orientation:landscape) and (max-height: 515px)': {
+        height: '100px'
+      }
+    }
   },
 
 })
