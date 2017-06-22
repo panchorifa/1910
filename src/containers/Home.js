@@ -33,8 +33,13 @@ const styles = StyleSheet.create({
       marginTop: '-12em',
     },
     '@media screen and (orientation:landscape) and (max-height: 768px)': {
-      marginTop: '-3em'
-    }
+      marginTop: '-3em',
+      // border: '1px solid blue'
+    },
+    '@media only screen and (max-device-width : 736px)  and (orientation : landscape)': {
+      marginTop: 0,
+      // border: '1px solid red'
+    },
   },
   languages: {
     marginTop: '2em',

@@ -118,6 +118,9 @@ const styles = StyleSheet.create({
     },
     '@media screen and (orientation:landscape) and (max-height: 768px)': {
       marginTop: '-1em'
+    },
+    '@media only screen and (max-device-width : 736px)  and (orientation : landscape)': {
+      marginTop: '1em'
     }
   },
 

@@ -41,6 +41,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#000',
     display: 'flex', flexFlow: 'row', justifyContent: 'space-between',
   },
+  burgerandmenu: {
+    '@media screen and (orientation:landscape) and (max-height: 515px)': {
+      display: 'none'
+    }
+  }
 })
 
 const scroll = Scroll.animateScroll
@@ -92,6 +97,7 @@ class Header extends Component {
           </div>
         </MediaQuery>
         <MediaQuery query='(max-device-width: 515px)'>
+        <div className={css(styles.burgerandmenu)}>
         <div className={css(styles.burger)} style={
             {borderBottom: scrolled1 ? '1px solid #fff' : 'none'}}>
           <div onClick={this.scrollToTop.bind(this)} style={{padding: '1em .75em'}}>
@@ -109,6 +115,7 @@ class Header extends Component {
               }}><BurgerMenu/></div>
           }
           </Motion>
+          </div>
         </MediaQuery>
       </div>
     )
