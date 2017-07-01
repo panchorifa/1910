@@ -2,15 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { StyleSheet, css } from 'aphrodite'
 import Logo from '../components/Logo'
-import Typer from '../components/Typer'
 import Languages from '../components/Languages'
-import {msg} from '../libs/services'
 import MediaQuery from 'react-responsive'
-import {color2} from '../libs/colors'
-import {upToSmall, upToMedium, upToSkinny,
-        atLeastSmall, atLeastMediumBig, atLeastBig,
-        ipad, ipadPortrait,
-        upToMediumBig, upToBig} from '../libs/media'
+import {atLeastSmall, atLeastMediumBig} from '../libs/media'
 
 
 const styles = StyleSheet.create({
@@ -49,8 +43,6 @@ const styles = StyleSheet.create({
 
 class Home extends Component {
   render() {
-    const lang = this.props.lang
-    const typer = msg(this.props.lang, 'home.typer')
     const active = this.props.section < 0
     return active && <div className={css(styles.section)}>
         <div className={css(styles.logo)}>
@@ -81,8 +73,7 @@ class Home extends Component {
 
 const mapStateToProps = (store) => {
   return {
-    section: store.section,
-    lang: store.lang
+    section: store.section
   }
 }
 

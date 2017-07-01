@@ -15,7 +15,7 @@ import Ideas from '../containers/Ideas'
 import Products from '../containers/Products'
 import Scroll from 'react-scroll'
 import Waypoint from 'react-waypoint'
-import {color2, color5} from '../libs/colors'
+import {color2} from '../libs/colors'
 
 const Element = Scroll.Element
 

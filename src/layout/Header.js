@@ -8,8 +8,6 @@ import { StyleSheet, css } from 'aphrodite'
 import Logo from '../components/Logo'
 import Menu from '../components/Menu'
 import BurgerMenu from './BurgerMenu'
-// import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-import {color2, color4} from '../libs/colors'
 import {upToSmall} from '../libs/media'
 import './Transitions.css'
 import {Motion, spring} from 'react-motion'
@@ -49,11 +47,6 @@ const styles = StyleSheet.create({
 })
 
 const scroll = Scroll.animateScroll
-
-const Comps = [
-  <img src='/pancho.jpg'/>,
-  <img src='/nine.jpg'/>
-];
 
 class Header extends Component {
   constructor(props){

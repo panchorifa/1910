@@ -3,7 +3,7 @@ import {StyleSheet, css} from 'aphrodite'
 import Label from '../components/Label'
 import Description from './Description'
 import Subscriptions from './Subscriptions'
-import {upToSmall, upToShorty, upToShort, upToTall} from '../libs/media'
+import {upToSmall, upToShorty, upToTall} from '../libs/media'
 import {color2} from '../libs/colors'
 
 
@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
     [upToSmall]: {
       flexGrow: 0,
       padding: '0 1em',
-      // border: '10px solid red',
     },
   },
   header: {

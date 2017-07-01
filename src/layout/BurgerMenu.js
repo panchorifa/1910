@@ -4,12 +4,10 @@ import Scroll from 'react-scroll'
 import {store} from '../store'
 import {StyleSheet, css} from 'aphrodite'
 import FontAwesome from 'react-fontawesome'
-import {color1,color2,color3,color4,color5} from '../libs/colors'
+import {color3} from '../libs/colors'
 import Logo from '../components/Logo'
 import SubscriptionSmall from '../components/SubscriptionSmall'
 import { msg } from '../libs/services'
-import Paper from 'material-ui/Paper'
-import Menu from 'material-ui/Menu'
 import MenuItem from 'material-ui/MenuItem'
 
 const scroll = Scroll.animateScroll

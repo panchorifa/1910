@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { StyleSheet, css } from 'aphrodite'
-import Logo from '../components/Logo'
 import Languages from '../components/Languages'
-import {color4} from '../libs/colors'
 import MediaQuery from 'react-responsive'
 
 const styles = StyleSheet.create({

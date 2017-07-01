@@ -10,7 +10,7 @@ import Products from './containers/Products'
 import Layout from './layout'
 import {loadApp} from './libs/services'
 import MediaQuery from 'react-responsive'
-import {upToSmall, atLeastSmall} from './libs/media'
+import {upToSmall} from './libs/media'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from "react-tap-event-plugin"
 injectTapEventPlugin()

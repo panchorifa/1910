@@ -3,11 +3,11 @@ import {connect} from 'react-redux'
 import {store} from '../store'
 import Scroll from 'react-scroll'
 import {StyleSheet, css} from 'aphrodite'
-import {atLeastSmall, upToShorty, upToSmall, upToSkinny, upToBig,
+import {atLeastSmall, upToShorty, upToSmall, upToSkinny,
         atLeastMediumBig,
         atLeastBig} from '../libs/media'
 import {msg} from '../libs/services'
-import {color1, color2, color5} from '../libs/colors'
+import {color2, color5} from '../libs/colors'
 
 const styles = StyleSheet.create({
   product: {
@@ -106,7 +106,6 @@ const styles = StyleSheet.create({
     marginLeft: 'auto',
     marginRight: 'auto',
     marginBottom: '-1.5em',
-    borderRadius: '.25em',
     display: 'flex', flexFlow: 'row', justifyContent:'center',
     backgroundColor: '#000',
     borderRadius: '10em',
@@ -170,8 +169,7 @@ class Product extends Component {
     const style = {
       backgroundColor: ideas ? '#000' : color2,
     }
-    const href = ideas ? 'javascript:void(0);' : this.link
-    const target = ideas ? '' : '_blank'
+    const href = ideas ? '#' : this.link
     return (
       <div style={style} className={css(styles.product)}>
         <a onClick={this.handleClick} className={css(styles.productLink)}

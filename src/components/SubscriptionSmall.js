@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { store } from '../store'
 import { StyleSheet, css } from 'aphrodite'
 import { subscribe, msg, validEmail } from '../libs/services'
 import { color2, color3, color4 } from '../libs/colors'
