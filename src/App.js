@@ -11,6 +11,9 @@ import Layout from './layout'
 import {loadApp} from './libs/services'
 import MediaQuery from 'react-responsive'
 import {upToSmall, atLeastSmall} from './libs/media'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import injectTapEventPlugin from "react-tap-event-plugin"
+injectTapEventPlugin()
 
 const styles = StyleSheet.create({
   content: {
@@ -26,11 +29,11 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = { width: '0', height: '0' };
-    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
   }
 
   updateWindowDimensions() {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
+    this.setState({ width: window.innerWidth, height: window.innerHeight })
   }
 
   async componentDidMount() {
@@ -42,7 +45,9 @@ class App extends Component {
   render() {
     const nothome = this.props.section > -1
     const app = this.props.app
-    return app && <Layout>
+    return app &&
+    <MuiThemeProvider>
+      <Layout>
         <Home/>
         { nothome && <MediaQuery query='(min-device-width: 516px)'>
         <div className={css(styles.content)}>
@@ -53,6 +58,7 @@ class App extends Component {
         </div>
         </MediaQuery> }
       </Layout>
+    </MuiThemeProvider>
   }
 }
 

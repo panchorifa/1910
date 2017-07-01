@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {withRouter} from 'react-router-dom'
 import MediaQuery from 'react-responsive'
 import FontAwesome from 'react-fontawesome'
 import {store} from '../store'
@@ -57,6 +58,12 @@ class Layout extends Component {
     super(props);
     this.state = { width: '0', height: '0', scrolled: false};
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+
+    window.addEventListener('orientationchange', this.doOnOrientationChange.bind(this))
+  }
+
+  doOnOrientationChange() {
+    window.location.reload()
   }
 
   componentWillUnmount() {
@@ -90,7 +97,7 @@ class Layout extends Component {
   }
 
   scrolled(value) {
-    this.setState({scrolled: value})
+    // this.setState({scrolled: value})
   }
 
   render() {
@@ -159,4 +166,4 @@ const mapStateToProps = (store) => {
     burger: store.burger
   }
 }
-export default connect(mapStateToProps)(Layout)
+export default withRouter(connect(mapStateToProps)(Layout))

@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     },
   },
   languages: {
-    marginTop: '2em',
+    marginTop: '1.5em',
     display: 'flex', flexFlow: 'row', justifyContent: 'center'
   }
 })
@@ -57,10 +57,21 @@ class Home extends Component {
           <MediaQuery query='(min-device-width: 516px)'>
             <div className={css(styles.blogo)}>
               <Logo height={9}/>
+              <div style={{color: '#fff', marginTop: '-1.5em',
+                fontSize: '1.35em',
+                letterSpacing: '8px',
+                marginLeft: '7.4em'}}>
+                Software
+              </div>
             </div>
           </MediaQuery>
           <MediaQuery query='(max-device-width: 515px)'>
             <Logo height={6}/>
+            <div style={{color: '#fff', marginTop: '-1.5em',
+              letterSpacing: '5.35px',
+              marginLeft: '6.85em'}}>
+              Software
+            </div>
             <div className={css(styles.languages)}><Languages name={true}/></div>
           </MediaQuery>
         </div>
