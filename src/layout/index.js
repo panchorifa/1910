@@ -97,7 +97,7 @@ class Layout extends Component {
   }
 
   scrolled(value) {
-    // this.setState({scrolled: value})
+    this.setState({scrolled: value})
   }
 
   render() {
