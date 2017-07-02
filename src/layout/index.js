@@ -21,12 +21,13 @@ const Element = Scroll.Element
 
 const styles = StyleSheet.create({
   section: {
+    flexGrow: 1,
     display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
   	backgroundColor: "#000",
   },
   content: {
     flexGrow: 1,
-    overflowY: 'scroll',
+    overflowY: 'auto',
     display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
     margin: 0, padding: 0
   },
@@ -104,9 +105,9 @@ class Layout extends Component {
     const scrolled = this.state.scrolled
     const home = this.props.section < 0
     const burger = this.props.burger
-    const height = isMobile() ? this.state.height+'px' : '100vh'
+    const height = isMobile() ? this.state.height+'px' : '100%'
     return (
-      <div>
+      <div style={{overflow: 'hidden', height: '100vh', display: 'flex', flexFlow: 'column', justifyContent: 'stretch'}}>
       <div style={ {height: height} } className={css(styles.section)}>
         <MediaQuery query='(max-device-width: 515px)'>
           <div><Waypoint onEnter={this.scrolled.bind(this, false)} onLeave={this.scrolled.bind(this, true)}/></div>

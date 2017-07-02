@@ -25,11 +25,11 @@ const styles = StyleSheet.create({
       paddingTop: '5em'
     },
     [atLeastMediumBig]: {
-      maxWidth: '70%',
+      maxWidth: '80%',
       margin: '0 auto'
     },
     [atLeastBig]: {
-      maxWidth: '85%',
+      maxWidth: '90%',
       margin: '0 auto'
     },
     [atLeastSmall]: {
