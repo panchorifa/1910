@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import {store } from '../store'
 import { StyleSheet, css } from 'aphrodite'
 import Content from '../layout/Content'
 import Label from '../components/Label'
@@ -76,11 +77,13 @@ class About extends Component {
     this.sections = ['team', 'community', 'careers']
   }
 
+  componentWillMount() {
+    store.dispatch({type: 'SET_SECTION', section: 3})
+  }
+
   render() {
     const sections = this.sections
-    const show = this.props.section === 3 || this.props.show
-
-    return show &&
+    return (
       <Content prefix='about.title.prefix' title='about.title.value'>
          <div className={css(styles.sections)}>
             { sections.map((section, index) => (
@@ -96,6 +99,7 @@ class About extends Component {
          </div>
          <div className={css(styles.map)}><Map/></div>
       </Content>
+    )
   }
 }
 

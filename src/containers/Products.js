@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect }          from 'react-redux'
+import {store} from '../store'
 import { StyleSheet, css }  from 'aphrodite'
 import Content              from '../layout/Content'
 import Product              from '../components/Product'
@@ -52,11 +53,13 @@ const styles = StyleSheet.create({
 })
 
 class Products extends Component {
+  componentWillMount() {
+    store.dispatch({type: 'SET_SECTION', section: 1})
+  }
+
   render() {
     const productList = msg(this.props.lang, 'products.products')
-    const show = this.props.section === 0 || this.props.show
     return (
-       show &&
       <Content prefix='products.title.prefix'
                title='products.title.value'
                description='products.description'>

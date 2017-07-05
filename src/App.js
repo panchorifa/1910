@@ -8,11 +8,13 @@ import About from './containers/About'
 import Ideas from './containers/Ideas'
 import Products from './containers/Products'
 import Layout from './layout'
+import Routes from './Routes'
 import {loadApp} from './libs/services'
 import MediaQuery from 'react-responsive'
 import {upToSmall} from './libs/media'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import injectTapEventPlugin from "react-tap-event-plugin"
+import Mobile from './layout/Mobile'
 injectTapEventPlugin()
 
 const styles = StyleSheet.create({
@@ -21,6 +23,12 @@ const styles = StyleSheet.create({
     display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
     [upToSmall]:{
       marginTop: '3em'
+    }
+  },
+  mobile: {
+    display: 'block',
+    [upToSmall]: {
+      display: 'flex', flexFlow: 'column', justifyContent: 'stretch'
     }
   }
 })
@@ -43,21 +51,18 @@ class App extends Component {
   }
 
   render() {
-    const nothome = this.props.section > -1
+    const home = this.props.section === 0
     const app = this.props.app
     return app &&
     <MuiThemeProvider>
-      <Layout>
-        <Home/>
-        { nothome && <MediaQuery query='(min-device-width: 516px)'>
-        <div className={css(styles.content)}>
-          <Products show={false}/>
-          <Inspiration show={false}/>
-          <Ideas show={false}/>
-          <About show={false}/>
+      <div>
+        <Layout>
+          <Routes />
+        </Layout>
+        <div className={css(styles.mobile)}>
+          <Mobile/>
         </div>
-        </MediaQuery> }
-      </Layout>
+      </div>
     </MuiThemeProvider>
   }
 }

@@ -11,19 +11,13 @@ class Logo extends Component {
     const style = {
       height: this.height + 'em',
       color: this.color,
-      userSelect: 'none'
+      userSelect: 'none',
     }
-    const src = this.color === 'black' ? 'black-1910.png' : 'white-1910.png'    
+    const src = this.color === 'black' ? 'black-1910.png' : 'white-1910.png'
     return (
       <img src={src} alt='1910' style={style}/>
     )
   }
 }
 
-const mapStateToProps = function(store) {
-  return {
-    menu: store.menu
-  }
-}
-
-export default connect(mapStateToProps)(Logo)
+export default Logo

@@ -1,12 +1,16 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {store} from '../store'
 import Content from '../layout/Content'
 import Quotes from '../components/Quotes'
 
 class Inspiration extends Component {
+  componentWillMount() {
+    store.dispatch({type: 'SET_SECTION', section: 2})
+  }
+
   render() {
-    const show = this.props.section === 1 || this.props.show
-    return show && <Content
+    return <Content
               prefix='inspiration.title.prefix'
               title='inspiration.title.value'
               description='inspiration.description'

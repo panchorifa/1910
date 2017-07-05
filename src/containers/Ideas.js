@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
+import {store} from '../store'
 import FontAwesome from 'react-fontawesome'
 import { StyleSheet, css } from 'aphrodite'
 import Content from '../layout/Content'
@@ -100,6 +101,10 @@ class Ideas extends Component {
     this.state = { idea: '', thankyou: false }
   }
 
+  componentWillMount() {
+    store.dispatch({type: 'SET_SECTION', section: 1})
+  }
+
   handleChange = (event) => {
     this.setState({idea: event.target.value})
   }
@@ -112,14 +117,11 @@ class Ideas extends Component {
 
   closeThanks = (event) => {
     this.setState({thankyou: false})
-    // this.forceUpdate()
   }
 
   render() {
     const message = msg(this.props.lang, 'ideas.message')
-    const show = this.props.section === 2 || this.props.show
-
-    return show &&
+    return (
         <Content prefix='ideas.title.prefix'
                  title='ideas.title.value'
                  description='ideas.description'>
@@ -142,6 +144,7 @@ class Ideas extends Component {
               </div> }
           </div>
         </Content>
+      )
   }
 }
 
@@ -153,7 +156,3 @@ const mapStateToProps = (store) => {
 }
 
 export default connect(mapStateToProps)(Ideas)
-
-// componentDidMount() {
-//   findDOMNode(this.refs.textarea).focus();
-// }
