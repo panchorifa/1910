@@ -4,7 +4,6 @@ import { connect }          from 'react-redux'
 import { store }            from '../store'
 import { StyleSheet, css }  from 'aphrodite'
 import { msg }              from '../libs/services'
-import NavigationLink       from './NavigationLink'
 import {color2}             from '../libs/colors'
 
 const styles = StyleSheet.create({

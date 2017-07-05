@@ -1,16 +1,11 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {withRouter} from 'react-router-dom'
-import MediaQuery from 'react-responsive'
+import React from 'react'
 import FontAwesome from 'react-fontawesome'
-import {store} from '../store'
 import {StyleSheet, css} from 'aphrodite'
 import Inspiration from '../containers/Inspiration'
 import About from '../containers/About'
 import Ideas from '../containers/Ideas'
 import Products from '../containers/Products'
 import Scroll from 'react-scroll'
-import Waypoint from 'react-waypoint'
 
 import {color2} from '../libs/colors'
 

@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
-class Logo extends Component {
+export default class Logo extends Component {
   constructor({height, color}){
     super()
     this.height = height
     this.color = color || '#fff'
   }
+
   render() {
     const style = {
       height: this.height + 'em',
@@ -19,5 +19,3 @@ class Logo extends Component {
     )
   }
 }
-
-export default Logo

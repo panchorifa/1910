@@ -5,8 +5,6 @@ import { StyleSheet, css } from 'aphrodite'
 import MainLogo from '../components/MainLogo'
 import Languages from '../components/Languages'
 import MediaQuery from 'react-responsive'
-import {atLeastSmall, atLeastMediumBig} from '../libs/media'
-
 
 const styles = StyleSheet.create({
   section :{

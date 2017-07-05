@@ -2,17 +2,14 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
 import MediaQuery from 'react-responsive'
-import FontAwesome from 'react-fontawesome'
 import {store} from '../store'
 import {StyleSheet, css} from 'aphrodite'
 import Header from './Header'
 import Footer from './Footer'
 import DownArrow from '../components/DownArrow'
 import {loadApp, isMobile} from '../libs/services'
-import Scroll from 'react-scroll'
 import Waypoint from 'react-waypoint'
-import {color2} from '../libs/colors'
-import Mobile from './Mobile'
+import Scroll from 'react-scroll'
 
 const Element = Scroll.Element
 
@@ -42,8 +39,6 @@ const styles = StyleSheet.create({
     top: '34%',
   },
 })
-
-const scroll = Scroll.animateScroll
 
 
 class Layout extends Component {

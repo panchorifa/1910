@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
 })
 
 export default () => (
-  <div className="NotFound">
+  <div className={css(styles.notfound)}>
     <h3>Sorry, page not found!</h3>
   </div>
 )
