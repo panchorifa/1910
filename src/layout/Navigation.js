@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     textDecoration: 'none',
     ':hover':{
       color: '#ddd'
-    } ,   
+    },
     ':last-child': {
 
     }
@@ -43,7 +43,8 @@ class Navigation extends Component {
     return (
       <div className={css(styles.component)}>
         { sections && sections.map((section, index) => (
-          <Link key={index} className={css(styles.link)} style={{
+          <Link key={index}
+                style={{
                     color: path === `/${section}` ? '#FFF' : '#666',
                     borderBottom: path === `/${section}` ? '6px solid '+color2 : '6px solid #000'
                 }}
