@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     margin: '0 1em',
     fontSize: '1.25em',
     color: '#fff',
+    userSelect: 'none'
   },
   footer: {
     height:'3em',
@@ -86,18 +87,15 @@ class BurgerMenu extends React.Component {
           </div>
         </div>
 
-            <div style={{marginTop: '2em'}}>
-              { menuItems.map( (item, idx) => (
-                <MenuItem
-                    key={'item'+idx}
-                    className={css(styles.entry)}
-                    onClick={this.handleClick.bind(this, item)}
-                    primaryText={msg(lang, 'home.'+item+'.name')}/>
-              )) }
-            </div>
-
-
-
+        <div style={{marginTop: '2em'}}>
+          { menuItems.map( (item, idx) => (
+            <MenuItem
+                key={'item'+idx}
+                className={css(styles.entry)}
+                onClick={this.handleClick.bind(this, item)}
+                primaryText={msg(lang, 'home.'+item+'.name')}/>
+          )) }
+        </div>
 
         <div style={{marginTop:'3em', color: '#222'}}>
           <SubscriptionSmall/>
@@ -118,22 +116,3 @@ const mapStateToProps = (store) => {
 }
 
 export default connect(mapStateToProps)(BurgerMenu)
-
-
-// <Paper style={{display: 'inline-block', margin: '16px 32px 16px 0'}}>
-//   <Menu>
-//       <MenuItem primaryText="Maps" />
-//       <MenuItem primaryText="Books" />
-//       <MenuItem primaryText="Flights" />
-//       <MenuItem primaryText="Apps" />
-//   </Menu>
-// </Paper>
-
-
-// { menuItems.map( (item, idx) => (
-//   <div key={'item'+idx} onClick={this.handleClick.bind(this, item)}
-//        style={{backgroundColor: idx % 2 === 0 ? '#fdfdfd' : '#fff'}}
-//        className={css(styles.entry)}>
-//     {msg(lang, 'home.'+item+'.name')}
-//   </div>
-// )) }
