@@ -8,14 +8,14 @@ const styles = StyleSheet.create({
     height: '400px', width: '400px',
     display: 'flex', flexFlow: 'column', justifyContent: 'center',
     [upToSmall]:{
-      marginTop: '7vh'
+      marginTop: '10vh'
     }
   },
   software: {
-    color: '#fff', margin: '-1.5em 0 0 7.4em',
+    color: '#fff', margin: '-1.5em 0 0 0',
     fontSize: '1.35em', letterSpacing: '8px',
     [upToSmall]: {
-      marginLeft: '5.75em',
+      marginLeft: '10.35em',
       letterSpacing: '5px',
     }
   }
@@ -31,17 +31,16 @@ class MainLogo extends Component {
     const style = {
       height: this.height + 'em',
       color: this.color,
+      margin: '0 auto',
       userSelect: 'none'
     }
     const src = this.color === 'black' ? 'black-1910.png' : 'white-1910.png'
     return (
       <div className={css(styles.section)}>
-        <div>
           <img src={src} alt='1910' style={style}/>
           <div className={css(styles.software)}>
             Software
           </div>
-        </div>
       </div>
     )
   }

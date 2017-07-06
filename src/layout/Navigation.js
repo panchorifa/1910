@@ -16,6 +16,12 @@ const styles = StyleSheet.create({
   link: {
     fontSize: '1.2em',
     marginRight: '1em',
+    padding: '0 4px',
+    lineHeight: '.7em',
+    textDecoration: 'none',
+    ':hover':{
+      color: '#ddd'
+    } ,   
     ':last-child': {
 
     }
@@ -37,11 +43,8 @@ class Navigation extends Component {
     return (
       <div className={css(styles.component)}>
         { sections && sections.map((section, index) => (
-          <Link key={index} style={{
+          <Link key={index} className={css(styles.link)} style={{
                     color: path === `/${section}` ? '#FFF' : '#666',
-                    padding: '0 4px',
-                    lineHeight: '.7em',
-                    textDecoration: 'none',
                     borderBottom: path === `/${section}` ? '6px solid '+color2 : '6px solid #000'
                 }}
                 className={css(styles.link)}
