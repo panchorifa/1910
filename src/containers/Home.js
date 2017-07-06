@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
     textAlign: 'center',
     backgroundColor: '#000',
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   logo: {
     width: '400px',
@@ -38,7 +38,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{flexGrow: 1,}}>
       <MediaQuery query='(max-device-width: 515px)'>
         <div className={css(styles.logo)}>
           <MainLogo height={7}/>

@@ -1,12 +1,9 @@
 'use strict';
 
-// var height = $(window).height();
-// var width = $(window).width();
-
 var height = window.innerHeight;
 var width = window.innerWidth;
 
-var game = new Phaser.Game(window.innerWidth+100, window.innerHeight+20, Phaser.CANVAS, 'playarea', {
+var game = new Phaser.Game(window.innerWidth, window.innerHeight-80, Phaser.CANVAS, 'playarea', {
     preload: preload,
     create: create,
     update: update

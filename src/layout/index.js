@@ -1,3 +1,4 @@
+
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {withRouter} from 'react-router-dom'
@@ -28,7 +29,7 @@ const styles = StyleSheet.create({
     flexGrow: 1,
     overflowY: 'auto',
     display: 'flex', flexFlow: 'column', justifyContent: 'stretch',
-    margin: 0, padding: 0
+    margin: 0, padding: 0,
   },
   waypoint1: {
     position: 'absolute',
@@ -130,8 +131,3 @@ const mapStateToProps = (store) => {
   }
 }
 export default withRouter(connect(mapStateToProps)(Layout))
-
-
-// <MediaQuery query='(max-device-width: 515px)'>
-//   <Mobile/>
-// </MediaQuery>

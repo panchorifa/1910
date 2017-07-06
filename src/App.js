@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     }
   },
   mobile: {
-    display: 'block',
+    display: 'none',
     [upToSmall]: {
       display: 'flex', flexFlow: 'column', justifyContent: 'stretch'
     }
